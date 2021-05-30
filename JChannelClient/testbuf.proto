@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+service Test{
+  rpc start(stream Request) returns (stream Response) {
+  }
+  rpc ask(ReqAsk) returns (RepAsk) {
+  }
+}
+
+message Request{
+  string content = 1;
+}
+
+message Response{
+  string content = 1;
+}
+
+message ReqAsk{
+  string content = 1;
+}
+
+message RepAsk{
+  string content = 1;
+}
