@@ -78,20 +78,27 @@ def try_ask(stub):
     else:
         print("none response")
 def run():
-    with grpc.insecure_channel("127.0.0.1:50051") as channel:
 
-        stub = testbuf_pb2_grpc.TestStub(channel)
-        print("run: " + threading.currentThread().getName())
-        print("Try ask")
-        try_ask(stub)
-        print("Try stream")
-        # try_stream(stub)
-        inputstream = stub.start(stream())
-        thread2 = threading.Thread(target=read_incoming(inputstream))
-        thread2.daemon = True
-        thread2.start()
+    try:
+        with grpc.insecure_channel("127.0.0.1:50051") as channel:
+            stub = testbuf_pb2_grpc.TestStub(channel)
+            print("run: " + threading.currentThread().getName())
+            print("Try ask")
+            try_ask(stub)
+            print("Try stream")
+            # try_stream(stub)
+            try:
+                inputstream = stub.start(stream())
+                thread2 = threading.Thread(target=read_incoming(inputstream))
+                thread2.daemon = True
+                thread2.start()
+            except:
+                print("except2")
+    except:
+        print("except")
+
     print("here")
 
 
 if __name__ == '__main__':
-    asyncio.run(run())
+    run()
