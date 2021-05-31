@@ -67,3 +67,17 @@ new_list = [1, 2, 3]
 empty_list = []
 empty_list.extend(new_list)
 print(empty_list)
+
+
+
+def generator_test(shared):
+    result = None
+    while 1:
+        yield result
+        if len(shared) > 0 :
+            result = shared[0]
+            del shared[0]
+        else:
+            
+while 1:
+    print()

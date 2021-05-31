@@ -1,5 +1,6 @@
 import sys
 import threading
+import time
 import uuid
 
 import grpc
@@ -160,7 +161,17 @@ class ClientStub:
         self.stubLock.acquire()
         try:
             self.serverList.clear()
-            self.serverList.extend()
+            self.serverList.extend(add_list)
+            print("Update addresses of servers: " + self.serverList)
         finally:
             self.stubLock.release()
+
+    def try_one_connect(self):
+        time.sleep(5000)
+
+    def start_grpc(self):
+        grpc_lock = threading.RLock()
+
+
+
 
