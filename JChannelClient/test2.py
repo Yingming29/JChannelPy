@@ -1,3 +1,5 @@
+import threading
+
 import grpc
 import jchannel_pb2
 import jchannel_pb2_grpc
@@ -66,18 +68,75 @@ for i in mes.stateRep.oneOfHistory:
 new_list = [1, 2, 3]
 empty_list = []
 empty_list.extend(new_list)
-print(empty_list)
 
 
+# print(empty_list)
 
-def generator_test(shared):
-    result = None
-    while 1:
-        yield result
-        if len(shared) > 0 :
-            result = shared[0]
-            del shared[0]
-        else:
-            
+
+class test_iterator:
+    def __init__(self, l):
+        self.iteration_msg = l
+        self.current_index = 0
+
+    def __iter__(self):
+        return self
+
+    def __add__(self, other):
+        self.iteration_msg.append(other)
+
+    def __next__(self):
+        try:
+            if self.current_index < len(self.iteration_msg):
+                self.current_index += 1
+                return self.iteration_msg[self.current_index - 1]
+            else:
+                while 1:
+                    if self.current_index < len(self.iteration_msg):
+                        self.current_index += 1
+                        print("Get message and send: " + str(self.iteration_msg[self.current_index - 1]))
+                        return self.iteration_msg[self.current_index - 1]
+                    else:
+                        pass
+                        # always check the shared_list
+                        # length_msg = len(self.iteration_msg)
+                        # print(str(self.current_index) + "  "  + str(length_msg))
+        except StopIteration:
+            pass
+
+
+class input_thread(threading.Thread):
+    def __init__(self, shared_iterator):
+        threading.Thread.__init__(self)
+        self.iter_toadd = shared_iterator
+        self.input_lock = threading.RLock()
+
+    def run(self):
+        print("Start input_thread.")
+        while 1:
+            input_string = input(">")
+            self.input_lock.acquire()
+            print(input_string)
+            try:
+                self.iter_toadd.__add__(input_string)
+                print("add")
+            finally:
+                self.input_lock.release()
+
+
+a = test_iterator([1, 2, 3])
+
+thread_input = input_thread(a)
+thread_input.setDaemon(True)
+thread_input.start()
 while 1:
-    print()
+    print(a.__next__())
+# a.__add__("new")
+
+'''new_lock = threading.RLock()
+new_lock.acquire()
+try:
+    a.__add__("new_value")
+finally:
+    new_lock.release()
+print(a.__next__())
+print(a.__next__())'''
