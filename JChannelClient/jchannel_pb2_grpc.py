@@ -15,12 +15,12 @@ class JChannelsServiceStub(object):
             channel: A grpc.Channel.
         """
         self.connect = channel.stream_stream(
-                '/JChannelsService/connect',
+                '/cn.yingming.grpc1.JChannelsService/connect',
                 request_serializer=jchannel__pb2.Request.SerializeToString,
                 response_deserializer=jchannel__pb2.Response.FromString,
                 )
         self.ask = channel.unary_unary(
-                '/JChannelsService/ask',
+                '/cn.yingming.grpc1.JChannelsService/ask',
                 request_serializer=jchannel__pb2.ReqAsk.SerializeToString,
                 response_deserializer=jchannel__pb2.RepAsk.FromString,
                 )
@@ -56,7 +56,7 @@ def add_JChannelsServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'JChannelsService', rpc_method_handlers)
+            'cn.yingming.grpc1.JChannelsService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -75,7 +75,7 @@ class JChannelsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_stream(request_iterator, target, '/JChannelsService/connect',
+        return grpc.experimental.stream_stream(request_iterator, target, '/cn.yingming.grpc1.JChannelsService/connect',
             jchannel__pb2.Request.SerializeToString,
             jchannel__pb2.Response.FromString,
             options, channel_credentials,
@@ -92,7 +92,7 @@ class JChannelsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/JChannelsService/ask',
+        return grpc.experimental.unary_unary(request, target, '/cn.yingming.grpc1.JChannelsService/ask',
             jchannel__pb2.ReqAsk.SerializeToString,
             jchannel__pb2.RepAsk.FromString,
             options, channel_credentials,

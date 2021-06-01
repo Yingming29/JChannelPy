@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+package cn.yingming.grpc1;
 service JChannelsService{
   rpc connect(stream Request) returns (stream Response) {
   }

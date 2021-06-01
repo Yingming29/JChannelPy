@@ -38,3 +38,8 @@ print("main " + str(a.__next__()))
 print("main " + str(a.__next__()))
 print("Main:  " + str(a.send(1)))
 
+x = 1
+y = 2
+if x== 1 and y ==2:
+    print("right")
+
