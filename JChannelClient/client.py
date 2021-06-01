@@ -50,20 +50,21 @@ class Client:
 
     def input_loop(self):
         while True:
-            print("Input cluster.")
+            print("Input")
             print(">")
             input_string = input()
-
-            if not self.isWork:
+            print("input loop: " + threading.currentThread().getName())
+            if self.isWork is False:
                 print("The connection does not work. Store the message.")
-            self.lock.acquire()
-            try:
-                self.msgList.append(input_string)
-            finally:
-                self.lock.release()
+            else:
+                self.lock.acquire()
+                try:
+                    self.msgList.append(input_string)
+                finally:
+                    self.lock.release()
 
-            if input_string == "disconnect":
-                break
+                if input_string == "disconnect":
+                    break
 
     def start_client(self):
         # set name and cluster
@@ -99,7 +100,8 @@ class test_iterator:
                 while 1:
                     if self.current_index < len(self.iteration_msg):
                         self.current_index += 1
-                        print("Get message in generator: " + str(self.iteration_msg[self.current_index - 1]))
+                        print("iterator: " + threading.currentThread().getName())
+                        #print("Get message in generator: " + str(self.iteration_msg[self.current_index - 1]))
                         # message = jchannel_pb2.Request(content=self.iteration_msg[self.current_index - 1])
                         return self.iteration_msg[self.current_index - 1]
                     else:
@@ -129,6 +131,7 @@ class ClientStub:
         try:
             self.serverList.clear()
             self.serverList.extend(add_list)
+            print("update: " + threading.currentThread().getName())
             print("Update addresses of servers: " + str(self.serverList))
         finally:
             self.stubLock.release()
@@ -148,6 +151,7 @@ class ClientStub:
         size = len(self.serverList)
         while 1:
             count += 1
+            print("reconnect: " + threading.currentThread().getName())
             random_select = random.randint(0, size)
             address = self.serverList[random_select]
             print("[Reconnection]: Random selected server for reconnection:" + address)
@@ -232,6 +236,7 @@ class Control_thread(threading.Thread):
 
     def run(self):
         print("Start the control thread.")
+        print("control thread: " + threading.currentThread().getName())
         '''
             4.1
                 1. create the iteratior with the first data, connectReq
@@ -249,6 +254,10 @@ class Control_thread(threading.Thread):
             responses = None
             try:
                 responses = self.client.clientStub.start_grpc(self.iter_to_add)
+                # start the read response thread
+                read_thread = Read_response(responses, self.client.clientStub, self.client.isWork)
+                read_thread.setDaemon(True)
+                read_thread.start()
             except:
                 self.client.clientStub.channel.close()
                 print("[gRPC]: onError() of gRPC connection, the client needs to reconnect to the next server.")
@@ -257,11 +266,6 @@ class Control_thread(threading.Thread):
                     self.client.isWork = False
                 finally:
                     self.control_lock.release()
-
-            # start the read response thread
-            read_thread = Read_response(responses, self.client.clientStub)
-            read_thread.setDaemon(True)
-            read_thread.start()
             # 4.3
             self.check_loop()
             # 4.4
@@ -319,6 +323,7 @@ class Control_thread(threading.Thread):
                 self.control_lock.acquire()
                 try:
                     del self.checked_msg_list[0]
+                    print("check loop: " + threading.currentThread().getName())
                     print("add a generated message to iterator")
                     self.iter_to_add.__add__(msg_request)
                 finally:
@@ -331,19 +336,26 @@ class Control_thread(threading.Thread):
 
 
 class Read_response(threading.Thread):
-    def __init__(self, stream, stub):
+    def __init__(self, stream, stub, isWork):
         threading.Thread.__init__(self)
         self.read_stream = stream
         self.client_stub = stub
         self.lock = threading.RLock()
+        self.is_work = isWork
 
     def run(self):
         try:
             for i in self.read_stream:
+                print("Read response: " + threading.currentThread().getName())
                 print("read_incoming(): " + threading.currentThread().getName())
                 self.judgeResponse(i)
         except:
-            raise ValueError("error of read thread")
+            self.lock.acquire()
+            try:
+                self.is_work = False
+            finally:
+                self.lock.release()
+            print("error of read thread")
 
     def judgeResponse(self, response):
         field = response.WhichOneof("oneType")
