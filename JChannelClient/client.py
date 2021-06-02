@@ -53,7 +53,9 @@ class Client:
             print("Input")
             print(">")
             input_string = input()
-            print("input loop: " + threading.currentThread().getName())
+            if self.down is False:
+                break
+            # print("input loop: " + threading.currentThread().getName())
             if self.isWork is False:
                 print("The connection does not work. Store the message.")
             else:
@@ -100,8 +102,8 @@ class test_iterator:
                 while 1:
                     if self.current_index < len(self.iteration_msg):
                         self.current_index += 1
-                        print("iterator: " + threading.currentThread().getName())
-                        #print("Get message in generator: " + str(self.iteration_msg[self.current_index - 1]))
+                        # print("iterator: " + threading.currentThread().getName())
+                        # print("Get message in generator: " + str(self.iteration_msg[self.current_index - 1]))
                         # message = jchannel_pb2.Request(content=self.iteration_msg[self.current_index - 1])
                         return self.iteration_msg[self.current_index - 1]
                     else:
@@ -131,13 +133,13 @@ class ClientStub:
         try:
             self.serverList.clear()
             self.serverList.extend(add_list)
-            print("update: " + threading.currentThread().getName())
+            # print("update: " + threading.currentThread().getName())
             print("Update addresses of servers: " + str(self.serverList))
         finally:
             self.stubLock.release()
 
     def startStub(self):
-        control_thread = Control_thread(self.client.msgList, self.client.isWork, self.client)
+        control_thread = Control_thread(self.client)
         control_thread.setDaemon(True)
         control_thread.start()
 
@@ -151,32 +153,36 @@ class ClientStub:
         size = len(self.serverList)
         while 1:
             count += 1
-            print("reconnect: " + threading.currentThread().getName())
-            random_select = random.randint(0, size)
+            # print("reconnect: " + threading.currentThread().getName())
+            random_select = 0
+            if not size == 1:
+                random_select = random.randint(0, size - 1)
+
             address = self.serverList[random_select]
             print("[Reconnection]: Random selected server for reconnection:" + address)
             self.channel = grpc.insecure_channel(address)
             self.grpcStub1 = jchannel_pb2_grpc.JChannelsServiceStub(self.channel)
             self.grpcStub2 = jchannel_pb2_grpc.JChannelsServiceStub(self.channel)
             bool_result = self.try_one_connect()
+            time.sleep(1)
             if bool_result is True:
                 self.client.address = address
                 print("[Reconnection]: Reconnect successfully to server-" + self.client.address)
                 return True
-            if count > 9999:
+            if count > 5:
                 break
         print("[Reconnection]: Reconnect many times, end.")
         return False
 
     def try_one_connect(self):
-        time.sleep(5000)
+
         ask_req = jchannel_pb2.ReqAsk(
             source=self.client.uuid
         )
+
         try:
-            response = self.grpcStub2.ask(ask_req)
-            for i in response:
-                print(i)
+            res = self.grpcStub2.ask(ask_req, timeout=5000)
+            # print("try one reconnect's result: " + str(res))
             return True
         except:
             print("[Reconnection]: The new try connection is also not available.")
@@ -184,11 +190,9 @@ class ClientStub:
 
 
 class Control_thread(threading.Thread):
-    def __init__(self, shared_list, shared_isWork, shared_client):
+    def __init__(self, shared_client):
         threading.Thread.__init__(self)
         self.iter_to_add = None
-        self.checked_msg_list = shared_list
-        self.checked_isWork = shared_isWork
         self.client = shared_client
         self.control_lock = threading.RLock()
 
@@ -198,18 +202,30 @@ class Control_thread(threading.Thread):
         # generate unicast messge
         if input_string.startswith("TO"):
             splited_string = input_string.split(" ", 2)
-
-            req = jchannel_pb2.Request(
-                messageRequest=jchannel_pb2.MessageReq(
-                    source=self.client.uuid,
-                    jchannel_address=self.client.jchannel_address,
-                    cluster=self.client.cluster,
-                    content=splited_string[2],
-                    timestamp=time_str,
-                    destination=splited_string[1]
+            if len(splited_string) == 3:
+                req = jchannel_pb2.Request(
+                    messageRequest=jchannel_pb2.MessageReq(
+                        source=self.client.uuid,
+                        jchannel_address=self.client.jchannel_address,
+                        cluster=self.client.cluster,
+                        content=splited_string[2],
+                        timestamp=time_str,
+                        destination=splited_string[1]
+                    )
                 )
-            )
-            return req
+                return req
+            else:
+                # common message request for broadcast
+                req = jchannel_pb2.Request(
+                    messageRequest=jchannel_pb2.MessageReq(
+                        source=self.client.uuid,
+                        jchannel_address=self.client.jchannel_address,
+                        cluster=self.client.cluster,
+                        content=input_string,
+                        timestamp=time_str
+                    )
+                )
+                return req
         elif input_string == "disconnect":
             # disconnect request
             req = jchannel_pb2.Request(
@@ -235,8 +251,8 @@ class Control_thread(threading.Thread):
             return req
 
     def run(self):
-        print("Start the control thread.")
-        print("control thread: " + threading.currentThread().getName())
+        # print("Start the control thread.")
+        # print("control thread: " + threading.currentThread().getName())
         '''
             4.1
                 1. create the iteratior with the first data, connectReq
@@ -248,48 +264,44 @@ class Control_thread(threading.Thread):
             '''
         while 1:
             connect_request = self.generate_connect_request()
-            messages = [connect_request]
+            state_request = self.getState()
+            messages = [connect_request, state_request]
             self.iter_to_add = test_iterator(messages)
             # create the bi-directional streaming rpc call given the connect request
             responses = None
             try:
                 responses = self.client.clientStub.start_grpc(self.iter_to_add)
                 # start the read response thread
-                read_thread = Read_response(responses, self.client.clientStub, self.client.isWork)
+                read_thread = Read_response(responses, self.client.clientStub, self.client)
                 read_thread.setDaemon(True)
                 read_thread.start()
             except:
-                self.client.clientStub.channel.close()
+
                 print("[gRPC]: onError() of gRPC connection, the client needs to reconnect to the next server.")
-                self.control_lock.acquire()
+                '''self.control_lock.acquire()
                 try:
                     self.client.isWork = False
                 finally:
-                    self.control_lock.release()
+                    self.control_lock.release()'''
             # 4.3
             self.check_loop()
             # 4.4
             reconnect_result = self.client.clientStub.reconnect()
             # 4.5
             if reconnect_result is False:
-                print("End in control thread.")
+                self.client.down = False
+                # print("End in control thread.")
                 break
 
     def getState(self):
-        state_req = jchannel_pb2.Request(
+        state_request = jchannel_pb2.Request(
             stateReq=jchannel_pb2.StateReq(
                 source=self.client.uuid,
                 cluster=self.client.cluster,
                 jchannel_address=self.client.jchannel_address,
             )
         )
-        self.control_lock.acquire()
-        try:
-            del self.checked_msg_list[0]
-            print("add a generated getState message to iterator")
-            self.iter_to_add.__add__(state_req)
-        finally:
-            self.control_lock.release()
+        return state_request
 
     def generate_connect_request(self):
         dt = datetime.datetime.now()
@@ -312,50 +324,57 @@ class Control_thread(threading.Thread):
         return connect_req
 
     def check_loop(self):
+        # print("check loop: " + threading.currentThread().getName())
         while 1:
-            if len(self.checked_msg_list) > 0 and self.checked_isWork is True:
-                line = self.checked_msg_list[0]
+            if len(self.client.msgList) > 0 and self.client.isWork is True:
+                line = self.client.msgList[0]
                 msg_request = self.judge_request(line)
+                # print(self.client.isWork)
                 '''
                     1. Add the new request to the generator
                     2. Remove the input string from the shared list
                     '''
                 self.control_lock.acquire()
+
                 try:
-                    del self.checked_msg_list[0]
-                    print("check loop: " + threading.currentThread().getName())
-                    print("add a generated message to iterator")
+                    del self.client.msgList[0]
+                    # print("add a generated message to iterator")
                     self.iter_to_add.__add__(msg_request)
                 finally:
                     self.control_lock.release()
 
-            elif self.checked_isWork is False:
+            if self.client.isWork is False:
+                self.client.clientStub.channel.close()
+                # print("self.checked_isWork is False")
                 break
             elif self.client.down is False:
                 sys.exit(0)
 
 
 class Read_response(threading.Thread):
-    def __init__(self, stream, stub, isWork):
+    def __init__(self, stream, stub, shared_client):
         threading.Thread.__init__(self)
         self.read_stream = stream
         self.client_stub = stub
         self.lock = threading.RLock()
-        self.is_work = isWork
+        self.client = shared_client
 
     def run(self):
+
         try:
             for i in self.read_stream:
-                print("Read response: " + threading.currentThread().getName())
-                print("read_incoming(): " + threading.currentThread().getName())
+                # print("Read response: " + threading.currentThread().getName())
                 self.judgeResponse(i)
         except:
+            # print("here")
             self.lock.acquire()
             try:
-                self.is_work = False
+                self.client.isWork = False
             finally:
                 self.lock.release()
-            print("error of read thread")
+
+            # print(" isWork in the read response: " + str(self.client.isWork))
+            # print("error of read thread")
 
     def judgeResponse(self, response):
         field = response.WhichOneof("oneType")
@@ -386,6 +405,5 @@ class Read_response(threading.Thread):
 
 if __name__ == "__main__":
     new_client = Client(sys.argv[1])
-    print("Start client: Will connect to gRPC server: " + sys.argv[1])
+    print("Start python client: Will connect to gRPC server: " + sys.argv[1])
     new_client.start_client()
-

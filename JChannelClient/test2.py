@@ -123,13 +123,13 @@ class input_thread(threading.Thread):
                 self.input_lock.release()
 
 
-a = test_iterator([1, 2, 3])
+'''''a = test_iterator([1, 2, 3])
 
 thread_input = input_thread(a)
 thread_input.setDaemon(True)
 thread_input.start()
 while 1:
-    print(a.__next__())
+    print(a.__next__())'''
 # a.__add__("new")
 
 '''new_lock = threading.RLock()
@@ -140,3 +140,57 @@ finally:
     new_lock.release()
 print(a.__next__())
 print(a.__next__())'''
+
+class obj:
+    def __init__(self):
+        self.a = 1
+class Threada(threading.Thread):
+    def __init__(self, shared_value, obj):
+        threading.Thread.__init__(self)
+        self.value = shared_value
+        self.lock = threading.RLock()
+        self.check = obj
+    def run(self):
+        self.lock.acquire()
+        try:
+            self.value = 1
+        finally:
+            self.lock.release()
+        print("thread a: " + str(self.value))
+        print("thread a: " + str(self.check.__class__))
+
+
+class Threadb(threading.Thread):
+    def __init__(self, shared_value, obj):
+        threading.Thread.__init__(self)
+        self.value = shared_value
+        self.lock = threading.RLock()
+        self.check = obj
+
+    def run(self):
+        self.lock.acquire()
+        try:
+
+            self.value = 2
+        finally:
+            self.lock.release()
+        print("thread b: " + str(self.value))
+
+
+class Main_t:
+    def __init__(self):
+        self.value = 0
+        self.check = obj()
+
+    def run(self):
+        print(self.value.__class__)
+        new_threada = Threada(self.value, self.check)
+        new_threada.start()
+        print(self.value)
+        new_threadb = Threadb(self.value, self.check)
+        new_threadb.start()
+        print(self.value)
+
+
+new_main = Main_t()
+new_main.run()
