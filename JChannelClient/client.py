@@ -345,7 +345,7 @@ class Control_thread(threading.Thread):
 
             if self.client.isWork is False:
                 self.client.clientStub.channel.close()
-                # print("self.checked_isWork is False")
+                # print("self.checked_isWork is False ")
                 break
             elif self.client.down is False:
                 sys.exit(0)
