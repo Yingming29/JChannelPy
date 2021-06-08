@@ -151,6 +151,15 @@ class ClientStub:
     def reconnect(self):
         count = 0
         size = len(self.serverList)
+
+        if len(self.serverList) == 0:
+            print("The available server list is null. Cannot select new address of node.")
+            self.stubLock.acquire()
+            try:
+                self.client.down = False
+            finally:
+                self.stubLock.release()
+            return False
         while 1:
             count += 1
             # print("reconnect: " + threading.currentThread().getName())
@@ -182,7 +191,7 @@ class ClientStub:
 
         try:
             res = self.grpcStub2.ask(ask_req, timeout=5000)
-            # print("try one reconnect's result: " + str(res))
+            print("try one reconnect's result: " + str(res))
             return True
         except:
             print("[Reconnection]: The new try connection is also not available.")
