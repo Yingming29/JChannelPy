@@ -14,11 +14,9 @@ import datetime
 
 class Client:
 
-    def __init__(self, address):
-        self.address = address
-        self.name = None
-        self.jchannel_address = None
-        self.uuid = str(uuid.uuid4())
+    def __init__(self, grpc_address):
+        self.address = grpc_address
+        self.logical_name = None
         self.lock = threading.RLock()
         # shared part
         self.isWork = True
@@ -26,25 +24,8 @@ class Client:
         self.cluster = None
         self.clientStub = None
         self.down = True
-
-    # input and set the name of the client
-    def set_name(self):
-        print("Input Name.")
-        print(">")
-        name_str = input()
-        name_str.strip()
-        self.name = str(name_str)
-        self.jchannel_address = "JChannel-" + self.name
-        return name_str
-
-    def set_cluster(self):
-        print("Input cluster.")
-        print(">")
-        cluster_str = input()
-        cluster_str.strip()
-        self.cluster = cluster_str
-        return
-
+        self.clientMembers = []
+        self.serverMembers = []
     def start_stub(self):
         self.clientStub = ClientStub(self)
 
@@ -65,13 +46,7 @@ class Client:
                 finally:
                     self.lock.release()
 
-                if input_string == "disconnect":
-                    break
-
     def start_client(self):
-        # set name and cluster
-        self.set_name()
-        self.set_cluster()
         # start the client stub
         self.start_stub()
         # add the startStub()
@@ -82,6 +57,7 @@ class Client:
         sys.exit(0)
 
 
+# It is the iterator used for the grpc bidirectional streaming.
 class test_iterator:
     def __init__(self, l):
         self.iteration_msg = l
@@ -125,7 +101,7 @@ class ClientStub:
         self.grpcStub2 = jchannel_pb2_grpc.JChannelsServiceStub(self.channel)
 
     def print_msg(self, message_rep):
-        print("[JChannel] " + message_rep.jchannel_address + ":" + str(message_rep.content))
+        print("[py_client] " + message_rep.source + ":" + str(message_rep.contentStr))
 
     def update(self, addresses):
         add_list = addresses.split(" ")
@@ -134,7 +110,7 @@ class ClientStub:
             self.serverList.clear()
             self.serverList.extend(add_list)
             # print("update: " + threading.currentThread().getName())
-            print("Update addresses of servers: " + str(self.serverList))
+            print("[Client Stub] Update addresses of servers: " + str(self.serverList))
         finally:
             self.stubLock.release()
 
@@ -190,11 +166,11 @@ class ClientStub:
         )
 
         try:
-            res = self.grpcStub2.ask(ask_req, timeout=5000)
-            print("try one reconnect's result: " + str(res))
+            res = self.grpcStub2.ask(ask_req, timeout=2000)
+            print("[Client Stub] try one reconnection, the result: " + str(res))
             return True
         except:
-            print("[Reconnection]: The new try connection is also not available.")
+            print("[Reconnection]: The try connection is also not available.")
             return False
 
 
@@ -206,55 +182,38 @@ class Control_thread(threading.Thread):
         self.control_lock = threading.RLock()
 
     def judge_request(self, input_string):
-        dt = datetime.datetime.now()
-        time_str = dt.strftime("%H:%M:%S")
         # generate unicast messge
-        if input_string.startswith("TO"):
+        if input_string.startswith("To"):
             splited_string = input_string.split(" ", 2)
-            if len(splited_string) == 3:
-                req = jchannel_pb2.Request(
-                    messageRequest=jchannel_pb2.MessageReq(
-                        source=self.client.uuid,
-                        jchannel_address=self.client.jchannel_address,
-                        cluster=self.client.cluster,
-                        content=splited_string[2],
-                        timestamp=time_str,
-                        destination=splited_string[1]
+            req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    msgReqPy=jchannel_pb2.MessageReqPy(
+                        source=self.client.logical_name,
+                        dest=splited_string[1],
+                        contentStr=splited_string[2]
                     )
                 )
-                return req
-            else:
-                # common message request for broadcast
-                req = jchannel_pb2.Request(
-                    messageRequest=jchannel_pb2.MessageReq(
-                        source=self.client.uuid,
-                        jchannel_address=self.client.jchannel_address,
-                        cluster=self.client.cluster,
-                        content=input_string,
-                        timestamp=time_str
-                    )
-                )
-                return req
+            )
+            return req
         elif input_string == "disconnect":
             # disconnect request
             req = jchannel_pb2.Request(
-                disconnectRequest=jchannel_pb2.DisconnectReq(
-                    source=self.client.uuid,
-                    jchannel_address=self.client.jchannel_address,
-                    cluster=self.client.cluster,
-                    timestamp=time_str
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    disconReqPy=jchannel_pb2.DisconnectReqPy(
+                        logical_name=self.client.logical_name
+                    )
                 )
             )
             return req
         else:
             # common message request for broadcast
             req = jchannel_pb2.Request(
-                messageRequest=jchannel_pb2.MessageReq(
-                    source=self.client.uuid,
-                    jchannel_address=self.client.jchannel_address,
-                    cluster=self.client.cluster,
-                    content=input_string,
-                    timestamp=time_str
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    msgReqPy=jchannel_pb2.MessageReqPy(
+                        source=self.client.logical_name,
+                        dest="",
+                        contentStr=input_string
+                    )
                 )
             )
             return req
@@ -273,8 +232,7 @@ class Control_thread(threading.Thread):
             '''
         while 1:
             connect_request = self.generate_connect_request()
-            state_request = self.getState()
-            messages = [connect_request, state_request]
+            messages = [connect_request]
             self.iter_to_add = test_iterator(messages)
             # create the bi-directional streaming rpc call given the connect request
             responses = None
@@ -285,13 +243,8 @@ class Control_thread(threading.Thread):
                 read_thread.setDaemon(True)
                 read_thread.start()
             except:
+                print("[Client Stub]: onError() of gRPC connection, the client needs to reconnect to the next server.")
 
-                print("[gRPC]: onError() of gRPC connection, the client needs to reconnect to the next server.")
-                '''self.control_lock.acquire()
-                try:
-                    self.client.isWork = False
-                finally:
-                    self.control_lock.release()'''
             # 4.3
             self.check_loop()
             # 4.4
@@ -302,28 +255,26 @@ class Control_thread(threading.Thread):
                 # print("End in control thread.")
                 break
 
-    def getState(self):
-        state_request = jchannel_pb2.Request(
-            stateReq=jchannel_pb2.StateReq(
-                source=self.client.uuid,
-                cluster=self.client.cluster,
-                jchannel_address=self.client.jchannel_address,
-            )
-        )
-        return state_request
-
     def generate_connect_request(self):
-        dt = datetime.datetime.now()
-        time_str = dt.strftime("%H:%M:%S")
-        connect_req = jchannel_pb2.Request(
-            connectRequest=jchannel_pb2.ConnectReq(
-                source=self.client.uuid,
-                jchannel_address=self.client.jchannel_address,
-                cluster=self.client.cluster,
-                timestamp=time_str
+        if self.client.down is True:
+            connect_req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    conReqPy=jchannel_pb2.ConnectReqPy(
+                        reconnect=True,
+                        logical_name=self.client.logical_name
+                    )
+                )
             )
-        )
-        print(self.client.name + " calls connect() request to Jgroups cluster: " + self.client.cluster)
+        else:
+            connect_req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    conReqPy=jchannel_pb2.ConnectReqPy(
+                        reconnect=False,
+                        logical_name=""
+                    )
+                )
+            )
+        print("[py_client] The client calls connect() request to a server.")
         lock = threading.RLock()
         lock.acquire()
         try:
@@ -371,11 +322,10 @@ class Read_response(threading.Thread):
     def run(self):
 
         try:
-            for i in self.read_stream:
-                # print("Read response: " + threading.currentThread().getName())
-                self.judgeResponse(i)
+            for response in self.read_stream:
+                py_response = response.pyRepMsg
+                self.judgeResponse(py_response)
         except:
-            # print("here")
             self.lock.acquire()
             try:
                 self.client.isWork = False
@@ -386,33 +336,54 @@ class Read_response(threading.Thread):
             # print("error of read thread")
 
     def judgeResponse(self, response):
+        # the response is the Message type, ReqMsgForPyClient
         field = response.WhichOneof("oneType")
 
-        if field == "connectResponse":
-            print("Get Connect() response.")
-        elif field == "messageResponse":
-            self.client_stub.print_msg(response.messageResponse)
-        elif field == "updateResponse":
-            self.client_stub.update(response.updateResponse.addresses)
-        elif field == "disconnectResponse":
+        if field == "conRepPy":
+            print("Get connect() response from server, the generate address string is:"
+                  + response.conRepPy.logical_name)
+        elif field == "msgRepPy":
+            self.client_stub.print_msg(response.msgRepPy)
+        elif field == "updateAddPy":
+            self.client_stub.update(response.updateAddPy.addresses)
+        elif field == "disconRepPy":
             self.lock.acquire()
             try:
                 self.client_stub.client.down = False
             finally:
                 self.lock.release()
-        elif field == "viewResponse":
-            view = response.viewResponse
-            print("** View:[" + str(view.creator) + "|" + str(view.viewNum) + "] ("
-                  + str(view.size) + ")" + view.jchannel_addresses)
-        elif field == "stateRep":
-            state_rep = response.stateRep
+        elif field == "clientViewPy":
+            view = response.clientViewPy
+            print("** Client View:[" + str(view.coordinator) + "|" + str(view.num) + "] ("
+                  + str(view.size) + ")" + view.members)
+            self.lock.acquire()
+            try:
+                self.client.clientMembers.clear()
+                if view.size > 0:
+                    for i in view.members:
+                        self.client.clientMembers.append(i)
+            finally:
+                self.stubLock.release()
+        elif field == "serverViewPy":
+            view = response.serverViewPy
+            print("** Server View:[" + str(view.coordinator) + "|" + str(view.num) + "] ("
+                  + str(view.size) + ")" + view.members)
+            self.lock.acquire()
+            try:
+                self.client.serverMembers.clear()
+                if view.size > 0:
+                    for i in view.members:
+                        self.client.serverMembers.append(i)
+            finally:
+                self.stubLock.release()
+        elif field == "stateRepPy":
+            state_rep = response.stateRepPy
             print(str(state_rep.size) + " messages in the chat history.")
             if state_rep.size > 0:
-                for i in state_rep.oneOfHistory:
+                for i in state_rep.line:
                     print(i)
-
 
 if __name__ == "__main__":
     new_client = Client(sys.argv[1])
-    print("Start python client: Will connect to gRPC server: " + sys.argv[1])
+    print("Start python client, and connect to grpc server: " + sys.argv[1])
     new_client.start_client()

@@ -3,7 +3,7 @@ import threading
 
 import grpc
 
-from JChannelClient import testbuf_pb2_grpc, testbuf_pb2
+from JChannelClient import testbuf_pb2_grpc, testbuf_pb2, jchannel_pb2
 
 '''
 dt = datetime.datetime.now()
@@ -208,5 +208,16 @@ def run():
         finally:
             main_lock.release()
 
+def test_message():
+    req = jchannel_pb2.Request(
+        pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+            conReqPy=jchannel_pb2.ConnectReqPy(
+                reconnect=False,
+                logical_name=""
+            )
+        )
+    )
+    print(req)
 
-run()
+
+test_message()

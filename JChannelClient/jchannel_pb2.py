@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0ejchannel.proto\x12\x11\x63n.yingming.grpc1\"\xf6\x01\n\x07Request\x12\x37\n\x0emessageRequest\x18\x01 \x01(\x0b\x32\x1d.cn.yingming.grpc1.MessageReqH\x00\x12\x37\n\x0e\x63onnectRequest\x18\x02 \x01(\x0b\x32\x1d.cn.yingming.grpc1.ConnectReqH\x00\x12=\n\x11\x64isconnectRequest\x18\x03 \x01(\x0b\x32 .cn.yingming.grpc1.DisconnectReqH\x00\x12/\n\x08stateReq\x18\x04 \x01(\x0b\x32\x1b.cn.yingming.grpc1.StateReqH\x00\x42\t\n\x07oneType\"\xe6\x02\n\x08Response\x12\x38\n\x0fmessageResponse\x18\x01 \x01(\x0b\x32\x1d.cn.yingming.grpc1.MessageRepH\x00\x12\x38\n\x0f\x63onnectResponse\x18\x02 \x01(\x0b\x32\x1d.cn.yingming.grpc1.ConnectRepH\x00\x12>\n\x12\x64isconnectResponse\x18\x03 \x01(\x0b\x32 .cn.yingming.grpc1.DisconnectRepH\x00\x12\x36\n\x0eupdateResponse\x18\x04 \x01(\x0b\x32\x1c.cn.yingming.grpc1.UpdateRepH\x00\x12\x32\n\x0cviewResponse\x18\x05 \x01(\x0b\x32\x1a.cn.yingming.grpc1.ViewRepH\x00\x12/\n\x08stateRep\x18\x06 \x01(\x0b\x32\x1b.cn.yingming.grpc1.StateRepH\x00\x42\t\n\x07oneType\"U\n\x07ViewRep\x12\x0f\n\x07\x63reator\x18\x01 \x01(\t\x12\x0f\n\x07viewNum\x18\x02 \x01(\x05\x12\x0c\n\x04size\x18\x03 \x01(\x05\x12\x1a\n\x12jchannel_addresses\x18\x04 \x01(\t\"\x1e\n\tUpdateRep\x12\x11\n\taddresses\x18\x01 \x01(\t\"\x80\x01\n\nMessageReq\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x18\n\x10jchannel_address\x18\x02 \x01(\t\x12\x0f\n\x07\x63luster\x18\x03 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x04 \x01(\t\x12\x11\n\ttimestamp\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x06 \x01(\t\"7\n\nMessageRep\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"Z\n\nConnectReq\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x18\n\x10jchannel_address\x18\x02 \x01(\t\x12\x0f\n\x07\x63luster\x18\x03 \x01(\t\x12\x11\n\ttimestamp\x18\x04 \x01(\t\"\x1c\n\nConnectRep\x12\x0e\n\x06result\x18\x01 \x01(\x08\"]\n\rDisconnectReq\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x18\n\x10jchannel_address\x18\x02 \x01(\t\x12\x0f\n\x07\x63luster\x18\x03 \x01(\t\x12\x11\n\ttimestamp\x18\x04 \x01(\t\"\x1f\n\rDisconnectRep\x12\x0e\n\x06result\x18\x01 \x01(\x08\"\x18\n\x06ReqAsk\x12\x0e\n\x06source\x18\x01 \x01(\t\"\x1a\n\x06RepAsk\x12\x10\n\x08survival\x18\x01 \x01(\x08\"E\n\x08StateReq\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x0f\n\x07\x63luster\x18\x02 \x01(\t\x12\x18\n\x10jchannel_address\x18\x03 \x01(\t\".\n\x08StateRep\x12\x0c\n\x04size\x18\x01 \x01(\x05\x12\x14\n\x0coneOfHistory\x18\x02 \x03(\t2\x9b\x01\n\x10JChannelsService\x12H\n\x07\x63onnect\x12\x1a.cn.yingming.grpc1.Request\x1a\x1b.cn.yingming.grpc1.Response\"\x00(\x01\x30\x01\x12=\n\x03\x61sk\x12\x19.cn.yingming.grpc1.ReqAsk\x1a\x19.cn.yingming.grpc1.RepAsk\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x0ejchannel.proto\x12\x11\x63n.yingming.grpc1\"\x84\x08\n\x07Request\x12\x39\n\rmessageReqRep\x18\x01 \x01(\x0b\x32 .cn.yingming.grpc1.MessageReqRepH\x00\x12\x37\n\x0e\x63onnectRequest\x18\x02 \x01(\x0b\x32\x1d.cn.yingming.grpc1.ConnectReqH\x00\x12=\n\x11\x64isconnectRequest\x18\x03 \x01(\x0b\x32 .cn.yingming.grpc1.DisconnectReqH\x00\x12/\n\x08stateReq\x18\x04 \x01(\x0b\x32\x1b.cn.yingming.grpc1.StateReqH\x00\x12\x39\n\rgetAddressReq\x18\x07 \x01(\x0b\x32 .cn.yingming.grpc1.GetAddressReqH\x00\x12\x33\n\ngetNameReq\x18\x08 \x01(\x0b\x32\x1d.cn.yingming.grpc1.GetNameReqH\x00\x12\x41\n\x11getClusterNameReq\x18\t \x01(\x0b\x32$.cn.yingming.grpc1.GetClusterNameReqH\x00\x12@\n\rprintProtoReq\x18\n \x01(\x0b\x32\'.cn.yingming.grpc1.PrintProtocolSpecReqH\x00\x12;\n\x0egetPropertyReq\x18\x0b \x01(\x0b\x32!.cn.yingming.grpc1.GetPropertyReqH\x00\x12\x35\n\x0bsetStatsReq\x18\x0c \x01(\x0b\x32\x1e.cn.yingming.grpc1.SetStatsReqH\x00\x12\x34\n\ngetStatReq\x18\r \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStatsReqH\x00\x12\x37\n\x0c\x64umpStatsReq\x18\x0e \x01(\x0b\x32\x1f.cn.yingming.grpc1.DumpStatsReqH\x00\x12\x45\n\x13setDiscardOwnMsgReq\x18\x0f \x01(\x0b\x32&.cn.yingming.grpc1.SetDiscardOwnMsgReqH\x00\x12\x45\n\x13getDiscardOwnMsgReq\x18\x10 \x01(\x0b\x32&.cn.yingming.grpc1.GetDiscardOwnMsgReqH\x00\x12\x35\n\x0bgetStateReq\x18\x11 \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStateReqH\x00\x12\x33\n\nisStateReq\x18\x12 \x01(\x0b\x32\x1d.cn.yingming.grpc1.IsStateReqH\x00\x12\x38\n\x08pyReqMsg\x18\x13 \x01(\x0b\x32$.cn.yingming.grpc1.ReqMsgForPyClientH\x00\x42\t\n\x07oneType\"\xed\t\n\x08Response\x12\x39\n\rmessageReqRep\x18\x01 \x01(\x0b\x32 .cn.yingming.grpc1.MessageReqRepH\x00\x12\x38\n\x0f\x63onnectResponse\x18\x02 \x01(\x0b\x32\x1d.cn.yingming.grpc1.ConnectRepH\x00\x12>\n\x12\x64isconnectResponse\x18\x03 \x01(\x0b\x32 .cn.yingming.grpc1.DisconnectRepH\x00\x12\x36\n\x0eupdateResponse\x18\x04 \x01(\x0b\x32\x1c.cn.yingming.grpc1.UpdateRepH\x00\x12\x32\n\x0cviewResponse\x18\x05 \x01(\x0b\x32\x1a.cn.yingming.grpc1.ViewRepH\x00\x12;\n\x0eviewRep_server\x18\x06 \x01(\x0b\x32!.cn.yingming.grpc1.ViewRep_serverH\x00\x12@\n\x0fupdateNameCache\x18\x07 \x01(\x0b\x32%.cn.yingming.grpc1.UpdateNameCacheRepH\x00\x12/\n\x08stateRep\x18\x08 \x01(\x0b\x32\x1b.cn.yingming.grpc1.StateRepH\x00\x12\x39\n\rgetAddressRep\x18\x0b \x01(\x0b\x32 .cn.yingming.grpc1.GetAddressRepH\x00\x12\x33\n\ngetNameRep\x18\x0c \x01(\x0b\x32\x1d.cn.yingming.grpc1.GetNameRepH\x00\x12\x41\n\x11getClusterNameRep\x18\r \x01(\x0b\x32$.cn.yingming.grpc1.GetClusterNameRepH\x00\x12@\n\rprintProtoRep\x18\x0e \x01(\x0b\x32\'.cn.yingming.grpc1.PrintProtocolSpecRepH\x00\x12;\n\x0egetPropertyRep\x18\x0f \x01(\x0b\x32!.cn.yingming.grpc1.GetPropertyRepH\x00\x12\x35\n\x0bsetStatsRep\x18\x10 \x01(\x0b\x32\x1e.cn.yingming.grpc1.SetStatsRepH\x00\x12\x35\n\x0bgetStatsRep\x18\x11 \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStatsRepH\x00\x12\x37\n\x0c\x64umpStatsRep\x18\x12 \x01(\x0b\x32\x1f.cn.yingming.grpc1.DumpStatsRepH\x00\x12\x42\n\x10setDiscardOwnRep\x18\x13 \x01(\x0b\x32&.cn.yingming.grpc1.SetDiscardOwnMsgRepH\x00\x12\x42\n\x10getDiscardOwnRep\x18\x14 \x01(\x0b\x32&.cn.yingming.grpc1.GetDiscardOwnMsgRepH\x00\x12\x35\n\x0bgetStateRep\x18\x15 \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStateRepH\x00\x12\x33\n\nisStateRep\x18\x16 \x01(\x0b\x32\x1d.cn.yingming.grpc1.IsStateRepH\x00\x12\x38\n\x08pyRepMsg\x18\x17 \x01(\x0b\x32$.cn.yingming.grpc1.RepMsgForPyClientH\x00\x42\t\n\x07oneType\"4\n\nIsStateReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\"\x1c\n\nIsStateRep\x12\x0e\n\x06result\x18\x01 \x01(\x08\"\'\n\x0bGetStateReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"\x1c\n\x0bGetStateRep\x12\r\n\x05state\x18\x01 \x01(\t\"@\n\x13SetDiscardOwnMsgReq\x12\x18\n\x10jchannal_address\x18\x01 \x01(\t\x12\x0f\n\x07\x64iscard\x18\x02 \x01(\x08\"&\n\x13SetDiscardOwnMsgRep\x12\x0f\n\x07\x64iscard\x18\x01 \x01(\x08\"/\n\x13GetDiscardOwnMsgReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"&\n\x13GetDiscardOwnMsgRep\x12\x0f\n\x07\x64iscard\x18\x01 \x01(\x08\"N\n\x0c\x44umpStatsReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\x15\n\rprotocol_name\x18\x02 \x01(\t\x12\r\n\x05\x61ttrs\x18\x03 \x03(\t\"$\n\x0c\x44umpStatsRep\x12\x14\n\x0cserializeMap\x18\x01 \x01(\x0c\"\'\n\x0bGetStatsReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"\x1c\n\x0bGetStatsRep\x12\r\n\x05stats\x18\x01 \x01(\x08\"6\n\x0bSetStatsReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\r\n\x05stats\x18\x02 \x01(\x08\"\x1c\n\x0bSetStatsRep\x12\r\n\x05stats\x18\x01 \x01(\x08\"*\n\x0eGetPropertyReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"$\n\x0eGetPropertyRep\x12\x12\n\nproperties\x18\x01 \x01(\t\"\xe4\x01\n\nChannelMsg\x12\x35\n\x0b\x65xchangeMsg\x18\x01 \x01(\x0b\x32\x1e.cn.yingming.grpc1.ExchangeMsgH\x00\x12I\n\x15updateReqBetweenNodes\x18\x02 \x01(\x0b\x32(.cn.yingming.grpc1.UpdateReqBetweenNodesH\x00\x12I\n\x15updateRepBetweenNodes\x18\x03 \x01(\x0b\x32(.cn.yingming.grpc1.UpdateRepBetweenNodesH\x00\x42\t\n\x07oneType\"E\n\x0b\x45xchangeMsg\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x13\n\x0b\x63ontent_str\x18\x02 \x01(\t\x12\x13\n\x0b\x63ontent_byt\x18\x03 \x01(\x0c\"(\n\x15UpdateReqBetweenNodes\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\"\x81\x01\n\x15UpdateRepBetweenNodes\x12\x38\n\tnameCache\x18\x01 \x01(\x0b\x32%.cn.yingming.grpc1.UpdateNameCacheRep\x12.\n\nclientView\x18\x02 \x01(\x0b\x32\x1a.cn.yingming.grpc1.ViewRep\";\n\x12UpdateNameCacheRep\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x03(\x0c\x12\x14\n\x0clogical_name\x18\x02 \x03(\t\"G\n\x14PrintProtocolSpecReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\x15\n\rinclude_props\x18\x02 \x01(\x08\"1\n\x14PrintProtocolSpecRep\x12\x19\n\x11protocolStackSpec\x18\x01 \x01(\t\"-\n\x11GetClusterNameReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\")\n\x11GetClusterNameRep\x12\x14\n\x0c\x63luster_name\x18\x01 \x01(\t\"&\n\nGetNameReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"\x1a\n\nGetNameRep\x12\x0c\n\x04name\x18\x01 \x01(\t\")\n\rGetAddressReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"?\n\rGetAddressRep\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\x12\x0e\n\x06isWork\x18\x02 \x01(\x08\x12\r\n\x05other\x18\x03 \x01(\t\"3\n\x0eViewRep_server\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x11\n\tview_byte\x18\x02 \x01(\x0c\"\x17\n\x07ViewRep\x12\x0c\n\x04view\x18\x01 \x01(\x0c\"\x1e\n\tUpdateRep\x12\x11\n\taddresses\x18\x01 \x01(\t\"1\n\rMessageReqRep\x12\x12\n\nmessageObj\x18\x01 \x01(\x0c\x12\x0c\n\x04type\x18\x02 \x01(\x05\"R\n\nConnectReq\x12\x11\n\treconnect\x18\x01 \x01(\x08\x12\x14\n\x0clogical_name\x18\x02 \x01(\t\x12\x1b\n\x13jchann_address_byte\x18\x03 \x01(\x0c\"C\n\nConnectRep\x12\x0e\n\x06result\x18\x01 \x01(\x08\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\x0c\x12\x14\n\x0clogical_name\x18\x03 \x01(\t\")\n\rDisconnectReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\x0c\"\x1f\n\rDisconnectRep\x12\x0e\n\x06result\x18\x01 \x01(\x08\"\x18\n\x06ReqAsk\x12\x0e\n\x06source\x18\x01 \x01(\t\"\x1a\n\x06RepAsk\x12\x10\n\x08survival\x18\x01 \x01(\x08\"E\n\x08StateReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\x0c\x12\x0e\n\x06target\x18\x02 \x01(\x0c\x12\x0f\n\x07timeout\x18\x03 \x01(\x04\"C\n\x08StateRep\x12\x18\n\x10jchannel_address\x18\x01 \x01(\x0c\x12\r\n\x05state\x18\x02 \x01(\x0c\x12\x0e\n\x06target\x18\x03 \x01(\x0c\"\xc3\x01\n\x11ReqMsgForPyClient\x12\x33\n\x08\x63onReqPy\x18\x01 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ConnectReqPyH\x00\x12\x39\n\x0b\x64isconReqPy\x18\x02 \x01(\x0b\x32\".cn.yingming.grpc1.DisconnectReqPyH\x00\x12\x33\n\x08msgReqPy\x18\x03 \x01(\x0b\x32\x1f.cn.yingming.grpc1.MessageReqPyH\x00\x42\t\n\x07oneType\"\xa1\x03\n\x11RepMsgForPyClient\x12\x33\n\x08\x63onRepPy\x18\x01 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ConnectRepPyH\x00\x12\x39\n\x0b\x64isconRepPy\x18\x02 \x01(\x0b\x32\".cn.yingming.grpc1.DisconnectRepPyH\x00\x12\x33\n\x08msgRepPy\x18\x03 \x01(\x0b\x32\x1f.cn.yingming.grpc1.MessageRepPyH\x00\x12\x33\n\nstateRepPy\x18\x04 \x01(\x0b\x32\x1d.cn.yingming.grpc1.StateRepPyH\x00\x12\x37\n\x0c\x63lientViewPy\x18\x05 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ClientViewPyH\x00\x12\x37\n\x0cserverViewPy\x18\x06 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ServerViewPyH\x00\x12\x35\n\x0bupdateAddPy\x18\x07 \x01(\x0b\x32\x1e.cn.yingming.grpc1.UpdateAddPyH\x00\x42\t\n\x07oneType\"7\n\x0c\x43onnectReqPy\x12\x11\n\treconnect\x18\x01 \x01(\x08\x12\x14\n\x0clogical_name\x18\x02 \x01(\t\"\'\n\x0f\x44isconnectReqPy\x12\x14\n\x0clogical_name\x18\x01 \x01(\t\"@\n\x0cMessageReqPy\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x65st\x18\x02 \x01(\t\x12\x12\n\ncontentStr\x18\x03 \x01(\t\"4\n\x0c\x43onnectRepPy\x12\x0e\n\x06result\x18\x01 \x01(\x08\x12\x14\n\x0clogical_name\x18\x02 \x01(\t\"!\n\x0f\x44isconnectRepPy\x12\x0e\n\x06result\x18\x01 \x01(\x08\"2\n\x0cMessageRepPy\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x12\n\ncontentStr\x18\x03 \x01(\t\"O\n\x0c\x43lientViewPy\x12\x0b\n\x03num\x18\x01 \x01(\x05\x12\x0f\n\x07members\x18\x02 \x03(\t\x12\x13\n\x0b\x63oordinator\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x05\"O\n\x0cServerViewPy\x12\x0b\n\x03num\x18\x01 \x01(\x05\x12\x0f\n\x07members\x18\x02 \x03(\t\x12\x13\n\x0b\x63oordinator\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x05\" \n\x0bUpdateAddPy\x12\x11\n\taddresses\x18\x01 \x01(\t\"(\n\nStateRepPy\x12\x0c\n\x04size\x18\x01 \x01(\x05\x12\x0c\n\x04line\x18\x02 \x03(\t2\x9b\x01\n\x10JChannelsService\x12H\n\x07\x63onnect\x12\x1a.cn.yingming.grpc1.Request\x1a\x1b.cn.yingming.grpc1.Response\"\x00(\x01\x30\x01\x12=\n\x03\x61sk\x12\x19.cn.yingming.grpc1.ReqAsk\x1a\x19.cn.yingming.grpc1.RepAsk\"\x00\x62\x06proto3'
 )
 
 
@@ -34,7 +34,7 @@ _REQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='messageRequest', full_name='cn.yingming.grpc1.Request.messageRequest', index=0,
+      name='messageReqRep', full_name='cn.yingming.grpc1.Request.messageReqRep', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -61,6 +61,97 @@ _REQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getAddressReq', full_name='cn.yingming.grpc1.Request.getAddressReq', index=4,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getNameReq', full_name='cn.yingming.grpc1.Request.getNameReq', index=5,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getClusterNameReq', full_name='cn.yingming.grpc1.Request.getClusterNameReq', index=6,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='printProtoReq', full_name='cn.yingming.grpc1.Request.printProtoReq', index=7,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getPropertyReq', full_name='cn.yingming.grpc1.Request.getPropertyReq', index=8,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='setStatsReq', full_name='cn.yingming.grpc1.Request.setStatsReq', index=9,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getStatReq', full_name='cn.yingming.grpc1.Request.getStatReq', index=10,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dumpStatsReq', full_name='cn.yingming.grpc1.Request.dumpStatsReq', index=11,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='setDiscardOwnMsgReq', full_name='cn.yingming.grpc1.Request.setDiscardOwnMsgReq', index=12,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getDiscardOwnMsgReq', full_name='cn.yingming.grpc1.Request.getDiscardOwnMsgReq', index=13,
+      number=16, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getStateReq', full_name='cn.yingming.grpc1.Request.getStateReq', index=14,
+      number=17, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='isStateReq', full_name='cn.yingming.grpc1.Request.isStateReq', index=15,
+      number=18, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pyReqMsg', full_name='cn.yingming.grpc1.Request.pyReqMsg', index=16,
+      number=19, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -79,7 +170,7 @@ _REQUEST = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=38,
-  serialized_end=284,
+  serialized_end=1066,
 )
 
 
@@ -92,7 +183,7 @@ _RESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='messageResponse', full_name='cn.yingming.grpc1.Response.messageResponse', index=0,
+      name='messageReqRep', full_name='cn.yingming.grpc1.Response.messageReqRep', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -127,8 +218,113 @@ _RESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='stateRep', full_name='cn.yingming.grpc1.Response.stateRep', index=5,
+      name='viewRep_server', full_name='cn.yingming.grpc1.Response.viewRep_server', index=5,
       number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='updateNameCache', full_name='cn.yingming.grpc1.Response.updateNameCache', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stateRep', full_name='cn.yingming.grpc1.Response.stateRep', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getAddressRep', full_name='cn.yingming.grpc1.Response.getAddressRep', index=8,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getNameRep', full_name='cn.yingming.grpc1.Response.getNameRep', index=9,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getClusterNameRep', full_name='cn.yingming.grpc1.Response.getClusterNameRep', index=10,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='printProtoRep', full_name='cn.yingming.grpc1.Response.printProtoRep', index=11,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getPropertyRep', full_name='cn.yingming.grpc1.Response.getPropertyRep', index=12,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='setStatsRep', full_name='cn.yingming.grpc1.Response.setStatsRep', index=13,
+      number=16, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getStatsRep', full_name='cn.yingming.grpc1.Response.getStatsRep', index=14,
+      number=17, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dumpStatsRep', full_name='cn.yingming.grpc1.Response.dumpStatsRep', index=15,
+      number=18, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='setDiscardOwnRep', full_name='cn.yingming.grpc1.Response.setDiscardOwnRep', index=16,
+      number=19, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getDiscardOwnRep', full_name='cn.yingming.grpc1.Response.getDiscardOwnRep', index=17,
+      number=20, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getStateRep', full_name='cn.yingming.grpc1.Response.getStateRep', index=18,
+      number=21, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='isStateRep', full_name='cn.yingming.grpc1.Response.isStateRep', index=19,
+      number=22, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pyRepMsg', full_name='cn.yingming.grpc1.Response.pyRepMsg', index=20,
+      number=23, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -150,43 +346,29 @@ _RESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=287,
-  serialized_end=645,
+  serialized_start=1069,
+  serialized_end=2330,
 )
 
 
-_VIEWREP = _descriptor.Descriptor(
-  name='ViewRep',
-  full_name='cn.yingming.grpc1.ViewRep',
+_ISSTATEREQ = _descriptor.Descriptor(
+  name='IsStateReq',
+  full_name='cn.yingming.grpc1.IsStateReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='creator', full_name='cn.yingming.grpc1.ViewRep.creator', index=0,
+      name='jchannel_address', full_name='cn.yingming.grpc1.IsStateReq.jchannel_address', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='viewNum', full_name='cn.yingming.grpc1.ViewRep.viewNum', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='size', full_name='cn.yingming.grpc1.ViewRep.size', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='jchannel_addresses', full_name='cn.yingming.grpc1.ViewRep.jchannel_addresses', index=3,
-      number=4, type=9, cpp_type=9, label=1,
+      name='type', full_name='cn.yingming.grpc1.IsStateReq.type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -203,8 +385,1071 @@ _VIEWREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=647,
-  serialized_end=732,
+  serialized_start=2332,
+  serialized_end=2384,
+)
+
+
+_ISSTATEREP = _descriptor.Descriptor(
+  name='IsStateRep',
+  full_name='cn.yingming.grpc1.IsStateRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='result', full_name='cn.yingming.grpc1.IsStateRep.result', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2386,
+  serialized_end=2414,
+)
+
+
+_GETSTATEREQ = _descriptor.Descriptor(
+  name='GetStateReq',
+  full_name='cn.yingming.grpc1.GetStateReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannel_address', full_name='cn.yingming.grpc1.GetStateReq.jchannel_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2416,
+  serialized_end=2455,
+)
+
+
+_GETSTATEREP = _descriptor.Descriptor(
+  name='GetStateRep',
+  full_name='cn.yingming.grpc1.GetStateRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='state', full_name='cn.yingming.grpc1.GetStateRep.state', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2457,
+  serialized_end=2485,
+)
+
+
+_SETDISCARDOWNMSGREQ = _descriptor.Descriptor(
+  name='SetDiscardOwnMsgReq',
+  full_name='cn.yingming.grpc1.SetDiscardOwnMsgReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannal_address', full_name='cn.yingming.grpc1.SetDiscardOwnMsgReq.jchannal_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='discard', full_name='cn.yingming.grpc1.SetDiscardOwnMsgReq.discard', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2487,
+  serialized_end=2551,
+)
+
+
+_SETDISCARDOWNMSGREP = _descriptor.Descriptor(
+  name='SetDiscardOwnMsgRep',
+  full_name='cn.yingming.grpc1.SetDiscardOwnMsgRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='discard', full_name='cn.yingming.grpc1.SetDiscardOwnMsgRep.discard', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2553,
+  serialized_end=2591,
+)
+
+
+_GETDISCARDOWNMSGREQ = _descriptor.Descriptor(
+  name='GetDiscardOwnMsgReq',
+  full_name='cn.yingming.grpc1.GetDiscardOwnMsgReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannel_address', full_name='cn.yingming.grpc1.GetDiscardOwnMsgReq.jchannel_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2593,
+  serialized_end=2640,
+)
+
+
+_GETDISCARDOWNMSGREP = _descriptor.Descriptor(
+  name='GetDiscardOwnMsgRep',
+  full_name='cn.yingming.grpc1.GetDiscardOwnMsgRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='discard', full_name='cn.yingming.grpc1.GetDiscardOwnMsgRep.discard', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2642,
+  serialized_end=2680,
+)
+
+
+_DUMPSTATSREQ = _descriptor.Descriptor(
+  name='DumpStatsReq',
+  full_name='cn.yingming.grpc1.DumpStatsReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannel_address', full_name='cn.yingming.grpc1.DumpStatsReq.jchannel_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='protocol_name', full_name='cn.yingming.grpc1.DumpStatsReq.protocol_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='attrs', full_name='cn.yingming.grpc1.DumpStatsReq.attrs', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2682,
+  serialized_end=2760,
+)
+
+
+_DUMPSTATSREP = _descriptor.Descriptor(
+  name='DumpStatsRep',
+  full_name='cn.yingming.grpc1.DumpStatsRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='serializeMap', full_name='cn.yingming.grpc1.DumpStatsRep.serializeMap', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2762,
+  serialized_end=2798,
+)
+
+
+_GETSTATSREQ = _descriptor.Descriptor(
+  name='GetStatsReq',
+  full_name='cn.yingming.grpc1.GetStatsReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannel_address', full_name='cn.yingming.grpc1.GetStatsReq.jchannel_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2800,
+  serialized_end=2839,
+)
+
+
+_GETSTATSREP = _descriptor.Descriptor(
+  name='GetStatsRep',
+  full_name='cn.yingming.grpc1.GetStatsRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='stats', full_name='cn.yingming.grpc1.GetStatsRep.stats', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2841,
+  serialized_end=2869,
+)
+
+
+_SETSTATSREQ = _descriptor.Descriptor(
+  name='SetStatsReq',
+  full_name='cn.yingming.grpc1.SetStatsReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannel_address', full_name='cn.yingming.grpc1.SetStatsReq.jchannel_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stats', full_name='cn.yingming.grpc1.SetStatsReq.stats', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2871,
+  serialized_end=2925,
+)
+
+
+_SETSTATSREP = _descriptor.Descriptor(
+  name='SetStatsRep',
+  full_name='cn.yingming.grpc1.SetStatsRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='stats', full_name='cn.yingming.grpc1.SetStatsRep.stats', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2927,
+  serialized_end=2955,
+)
+
+
+_GETPROPERTYREQ = _descriptor.Descriptor(
+  name='GetPropertyReq',
+  full_name='cn.yingming.grpc1.GetPropertyReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannel_address', full_name='cn.yingming.grpc1.GetPropertyReq.jchannel_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2957,
+  serialized_end=2999,
+)
+
+
+_GETPROPERTYREP = _descriptor.Descriptor(
+  name='GetPropertyRep',
+  full_name='cn.yingming.grpc1.GetPropertyRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='properties', full_name='cn.yingming.grpc1.GetPropertyRep.properties', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3001,
+  serialized_end=3037,
+)
+
+
+_CHANNELMSG = _descriptor.Descriptor(
+  name='ChannelMsg',
+  full_name='cn.yingming.grpc1.ChannelMsg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='exchangeMsg', full_name='cn.yingming.grpc1.ChannelMsg.exchangeMsg', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='updateReqBetweenNodes', full_name='cn.yingming.grpc1.ChannelMsg.updateReqBetweenNodes', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='updateRepBetweenNodes', full_name='cn.yingming.grpc1.ChannelMsg.updateRepBetweenNodes', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='oneType', full_name='cn.yingming.grpc1.ChannelMsg.oneType',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=3040,
+  serialized_end=3268,
+)
+
+
+_EXCHANGEMSG = _descriptor.Descriptor(
+  name='ExchangeMsg',
+  full_name='cn.yingming.grpc1.ExchangeMsg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='type', full_name='cn.yingming.grpc1.ExchangeMsg.type', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='content_str', full_name='cn.yingming.grpc1.ExchangeMsg.content_str', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='content_byt', full_name='cn.yingming.grpc1.ExchangeMsg.content_byt', index=2,
+      number=3, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3270,
+  serialized_end=3339,
+)
+
+
+_UPDATEREQBETWEENNODES = _descriptor.Descriptor(
+  name='UpdateReqBetweenNodes',
+  full_name='cn.yingming.grpc1.UpdateReqBetweenNodes',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='address', full_name='cn.yingming.grpc1.UpdateReqBetweenNodes.address', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3341,
+  serialized_end=3381,
+)
+
+
+_UPDATEREPBETWEENNODES = _descriptor.Descriptor(
+  name='UpdateRepBetweenNodes',
+  full_name='cn.yingming.grpc1.UpdateRepBetweenNodes',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nameCache', full_name='cn.yingming.grpc1.UpdateRepBetweenNodes.nameCache', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='clientView', full_name='cn.yingming.grpc1.UpdateRepBetweenNodes.clientView', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3384,
+  serialized_end=3513,
+)
+
+
+_UPDATENAMECACHEREP = _descriptor.Descriptor(
+  name='UpdateNameCacheRep',
+  full_name='cn.yingming.grpc1.UpdateNameCacheRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='address', full_name='cn.yingming.grpc1.UpdateNameCacheRep.address', index=0,
+      number=1, type=12, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logical_name', full_name='cn.yingming.grpc1.UpdateNameCacheRep.logical_name', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3515,
+  serialized_end=3574,
+)
+
+
+_PRINTPROTOCOLSPECREQ = _descriptor.Descriptor(
+  name='PrintProtocolSpecReq',
+  full_name='cn.yingming.grpc1.PrintProtocolSpecReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannel_address', full_name='cn.yingming.grpc1.PrintProtocolSpecReq.jchannel_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='include_props', full_name='cn.yingming.grpc1.PrintProtocolSpecReq.include_props', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3576,
+  serialized_end=3647,
+)
+
+
+_PRINTPROTOCOLSPECREP = _descriptor.Descriptor(
+  name='PrintProtocolSpecRep',
+  full_name='cn.yingming.grpc1.PrintProtocolSpecRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='protocolStackSpec', full_name='cn.yingming.grpc1.PrintProtocolSpecRep.protocolStackSpec', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3649,
+  serialized_end=3698,
+)
+
+
+_GETCLUSTERNAMEREQ = _descriptor.Descriptor(
+  name='GetClusterNameReq',
+  full_name='cn.yingming.grpc1.GetClusterNameReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannel_address', full_name='cn.yingming.grpc1.GetClusterNameReq.jchannel_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3700,
+  serialized_end=3745,
+)
+
+
+_GETCLUSTERNAMEREP = _descriptor.Descriptor(
+  name='GetClusterNameRep',
+  full_name='cn.yingming.grpc1.GetClusterNameRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_name', full_name='cn.yingming.grpc1.GetClusterNameRep.cluster_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3747,
+  serialized_end=3788,
+)
+
+
+_GETNAMEREQ = _descriptor.Descriptor(
+  name='GetNameReq',
+  full_name='cn.yingming.grpc1.GetNameReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannel_address', full_name='cn.yingming.grpc1.GetNameReq.jchannel_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3790,
+  serialized_end=3828,
+)
+
+
+_GETNAMEREP = _descriptor.Descriptor(
+  name='GetNameRep',
+  full_name='cn.yingming.grpc1.GetNameRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='cn.yingming.grpc1.GetNameRep.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3830,
+  serialized_end=3856,
+)
+
+
+_GETADDRESSREQ = _descriptor.Descriptor(
+  name='GetAddressReq',
+  full_name='cn.yingming.grpc1.GetAddressReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannel_address', full_name='cn.yingming.grpc1.GetAddressReq.jchannel_address', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3858,
+  serialized_end=3899,
+)
+
+
+_GETADDRESSREP = _descriptor.Descriptor(
+  name='GetAddressRep',
+  full_name='cn.yingming.grpc1.GetAddressRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='address', full_name='cn.yingming.grpc1.GetAddressRep.address', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='isWork', full_name='cn.yingming.grpc1.GetAddressRep.isWork', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='other', full_name='cn.yingming.grpc1.GetAddressRep.other', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3901,
+  serialized_end=3964,
+)
+
+
+_VIEWREP_SERVER = _descriptor.Descriptor(
+  name='ViewRep_server',
+  full_name='cn.yingming.grpc1.ViewRep_server',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='sender', full_name='cn.yingming.grpc1.ViewRep_server.sender', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='view_byte', full_name='cn.yingming.grpc1.ViewRep_server.view_byte', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3966,
+  serialized_end=4017,
+)
+
+
+_VIEWREP = _descriptor.Descriptor(
+  name='ViewRep',
+  full_name='cn.yingming.grpc1.ViewRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='view', full_name='cn.yingming.grpc1.ViewRep.view', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4019,
+  serialized_end=4042,
 )
 
 
@@ -235,58 +1480,30 @@ _UPDATEREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=734,
-  serialized_end=764,
+  serialized_start=4044,
+  serialized_end=4074,
 )
 
 
-_MESSAGEREQ = _descriptor.Descriptor(
-  name='MessageReq',
-  full_name='cn.yingming.grpc1.MessageReq',
+_MESSAGEREQREP = _descriptor.Descriptor(
+  name='MessageReqRep',
+  full_name='cn.yingming.grpc1.MessageReqRep',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='source', full_name='cn.yingming.grpc1.MessageReq.source', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='messageObj', full_name='cn.yingming.grpc1.MessageReqRep.messageObj', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='jchannel_address', full_name='cn.yingming.grpc1.MessageReq.jchannel_address', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cluster', full_name='cn.yingming.grpc1.MessageReq.cluster', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='content', full_name='cn.yingming.grpc1.MessageReq.content', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='timestamp', full_name='cn.yingming.grpc1.MessageReq.timestamp', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='destination', full_name='cn.yingming.grpc1.MessageReq.destination', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='type', full_name='cn.yingming.grpc1.MessageReqRep.type', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -302,47 +1519,8 @@ _MESSAGEREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=767,
-  serialized_end=895,
-)
-
-
-_MESSAGEREP = _descriptor.Descriptor(
-  name='MessageRep',
-  full_name='cn.yingming.grpc1.MessageRep',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='jchannel_address', full_name='cn.yingming.grpc1.MessageRep.jchannel_address', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='content', full_name='cn.yingming.grpc1.MessageRep.content', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=897,
-  serialized_end=952,
+  serialized_start=4076,
+  serialized_end=4125,
 )
 
 
@@ -355,30 +1533,23 @@ _CONNECTREQ = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='source', full_name='cn.yingming.grpc1.ConnectReq.source', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='reconnect', full_name='cn.yingming.grpc1.ConnectReq.reconnect', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='jchannel_address', full_name='cn.yingming.grpc1.ConnectReq.jchannel_address', index=1,
+      name='logical_name', full_name='cn.yingming.grpc1.ConnectReq.logical_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cluster', full_name='cn.yingming.grpc1.ConnectReq.cluster', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='timestamp', full_name='cn.yingming.grpc1.ConnectReq.timestamp', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='jchann_address_byte', full_name='cn.yingming.grpc1.ConnectReq.jchann_address_byte', index=2,
+      number=3, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -394,8 +1565,8 @@ _CONNECTREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=954,
-  serialized_end=1044,
+  serialized_start=4127,
+  serialized_end=4209,
 )
 
 
@@ -414,6 +1585,20 @@ _CONNECTREP = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='address', full_name='cn.yingming.grpc1.ConnectRep.address', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logical_name', full_name='cn.yingming.grpc1.ConnectRep.logical_name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -426,8 +1611,8 @@ _CONNECTREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1046,
-  serialized_end=1074,
+  serialized_start=4211,
+  serialized_end=4278,
 )
 
 
@@ -440,30 +1625,9 @@ _DISCONNECTREQ = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='source', full_name='cn.yingming.grpc1.DisconnectReq.source', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='jchannel_address', full_name='cn.yingming.grpc1.DisconnectReq.jchannel_address', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cluster', full_name='cn.yingming.grpc1.DisconnectReq.cluster', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='timestamp', full_name='cn.yingming.grpc1.DisconnectReq.timestamp', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='jchannel_address', full_name='cn.yingming.grpc1.DisconnectReq.jchannel_address', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -479,8 +1643,8 @@ _DISCONNECTREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1076,
-  serialized_end=1169,
+  serialized_start=4280,
+  serialized_end=4321,
 )
 
 
@@ -511,8 +1675,8 @@ _DISCONNECTREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1171,
-  serialized_end=1202,
+  serialized_start=4323,
+  serialized_end=4354,
 )
 
 
@@ -543,8 +1707,8 @@ _REQASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1204,
-  serialized_end=1228,
+  serialized_start=4356,
+  serialized_end=4380,
 )
 
 
@@ -575,8 +1739,8 @@ _REPASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1230,
-  serialized_end=1256,
+  serialized_start=4382,
+  serialized_end=4408,
 )
 
 
@@ -589,21 +1753,314 @@ _STATEREQ = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='source', full_name='cn.yingming.grpc1.StateReq.source', index=0,
+      name='jchannel_address', full_name='cn.yingming.grpc1.StateReq.jchannel_address', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='target', full_name='cn.yingming.grpc1.StateReq.target', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='timeout', full_name='cn.yingming.grpc1.StateReq.timeout', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4410,
+  serialized_end=4479,
+)
+
+
+_STATEREP = _descriptor.Descriptor(
+  name='StateRep',
+  full_name='cn.yingming.grpc1.StateRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='jchannel_address', full_name='cn.yingming.grpc1.StateRep.jchannel_address', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='state', full_name='cn.yingming.grpc1.StateRep.state', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='target', full_name='cn.yingming.grpc1.StateRep.target', index=2,
+      number=3, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4481,
+  serialized_end=4548,
+)
+
+
+_REQMSGFORPYCLIENT = _descriptor.Descriptor(
+  name='ReqMsgForPyClient',
+  full_name='cn.yingming.grpc1.ReqMsgForPyClient',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='conReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.conReqPy', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='disconReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.disconReqPy', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='msgReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.msgReqPy', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='oneType', full_name='cn.yingming.grpc1.ReqMsgForPyClient.oneType',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=4551,
+  serialized_end=4746,
+)
+
+
+_REPMSGFORPYCLIENT = _descriptor.Descriptor(
+  name='RepMsgForPyClient',
+  full_name='cn.yingming.grpc1.RepMsgForPyClient',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='conRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.conRepPy', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='disconRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.disconRepPy', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='msgRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.msgRepPy', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stateRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.stateRepPy', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='clientViewPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.clientViewPy', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='serverViewPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.serverViewPy', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='updateAddPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.updateAddPy', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='oneType', full_name='cn.yingming.grpc1.RepMsgForPyClient.oneType',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=4749,
+  serialized_end=5166,
+)
+
+
+_CONNECTREQPY = _descriptor.Descriptor(
+  name='ConnectReqPy',
+  full_name='cn.yingming.grpc1.ConnectReqPy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='reconnect', full_name='cn.yingming.grpc1.ConnectReqPy.reconnect', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logical_name', full_name='cn.yingming.grpc1.ConnectReqPy.logical_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5168,
+  serialized_end=5223,
+)
+
+
+_DISCONNECTREQPY = _descriptor.Descriptor(
+  name='DisconnectReqPy',
+  full_name='cn.yingming.grpc1.DisconnectReqPy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='logical_name', full_name='cn.yingming.grpc1.DisconnectReqPy.logical_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5225,
+  serialized_end=5264,
+)
+
+
+_MESSAGEREQPY = _descriptor.Descriptor(
+  name='MessageReqPy',
+  full_name='cn.yingming.grpc1.MessageReqPy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='source', full_name='cn.yingming.grpc1.MessageReqPy.source', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cluster', full_name='cn.yingming.grpc1.StateReq.cluster', index=1,
+      name='dest', full_name='cn.yingming.grpc1.MessageReqPy.dest', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='jchannel_address', full_name='cn.yingming.grpc1.StateReq.jchannel_address', index=2,
+      name='contentStr', full_name='cn.yingming.grpc1.MessageReqPy.contentStr', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -621,28 +2078,276 @@ _STATEREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1258,
-  serialized_end=1327,
+  serialized_start=5266,
+  serialized_end=5330,
 )
 
 
-_STATEREP = _descriptor.Descriptor(
-  name='StateRep',
-  full_name='cn.yingming.grpc1.StateRep',
+_CONNECTREPPY = _descriptor.Descriptor(
+  name='ConnectRepPy',
+  full_name='cn.yingming.grpc1.ConnectRepPy',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='size', full_name='cn.yingming.grpc1.StateRep.size', index=0,
+      name='result', full_name='cn.yingming.grpc1.ConnectRepPy.result', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='logical_name', full_name='cn.yingming.grpc1.ConnectRepPy.logical_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5332,
+  serialized_end=5384,
+)
+
+
+_DISCONNECTREPPY = _descriptor.Descriptor(
+  name='DisconnectRepPy',
+  full_name='cn.yingming.grpc1.DisconnectRepPy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='result', full_name='cn.yingming.grpc1.DisconnectRepPy.result', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5386,
+  serialized_end=5419,
+)
+
+
+_MESSAGEREPPY = _descriptor.Descriptor(
+  name='MessageRepPy',
+  full_name='cn.yingming.grpc1.MessageRepPy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='source', full_name='cn.yingming.grpc1.MessageRepPy.source', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='contentStr', full_name='cn.yingming.grpc1.MessageRepPy.contentStr', index=1,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5421,
+  serialized_end=5471,
+)
+
+
+_CLIENTVIEWPY = _descriptor.Descriptor(
+  name='ClientViewPy',
+  full_name='cn.yingming.grpc1.ClientViewPy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='num', full_name='cn.yingming.grpc1.ClientViewPy.num', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='oneOfHistory', full_name='cn.yingming.grpc1.StateRep.oneOfHistory', index=1,
+      name='members', full_name='cn.yingming.grpc1.ClientViewPy.members', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='coordinator', full_name='cn.yingming.grpc1.ClientViewPy.coordinator', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='size', full_name='cn.yingming.grpc1.ClientViewPy.size', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5473,
+  serialized_end=5552,
+)
+
+
+_SERVERVIEWPY = _descriptor.Descriptor(
+  name='ServerViewPy',
+  full_name='cn.yingming.grpc1.ServerViewPy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='num', full_name='cn.yingming.grpc1.ServerViewPy.num', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='members', full_name='cn.yingming.grpc1.ServerViewPy.members', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='coordinator', full_name='cn.yingming.grpc1.ServerViewPy.coordinator', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='size', full_name='cn.yingming.grpc1.ServerViewPy.size', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5554,
+  serialized_end=5633,
+)
+
+
+_UPDATEADDPY = _descriptor.Descriptor(
+  name='UpdateAddPy',
+  full_name='cn.yingming.grpc1.UpdateAddPy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='addresses', full_name='cn.yingming.grpc1.UpdateAddPy.addresses', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5635,
+  serialized_end=5667,
+)
+
+
+_STATEREPPY = _descriptor.Descriptor(
+  name='StateRepPy',
+  full_name='cn.yingming.grpc1.StateRepPy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='size', full_name='cn.yingming.grpc1.StateRepPy.size', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='line', full_name='cn.yingming.grpc1.StateRepPy.line', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -660,17 +2365,30 @@ _STATEREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1329,
-  serialized_end=1375,
+  serialized_start=5669,
+  serialized_end=5709,
 )
 
-_REQUEST.fields_by_name['messageRequest'].message_type = _MESSAGEREQ
+_REQUEST.fields_by_name['messageReqRep'].message_type = _MESSAGEREQREP
 _REQUEST.fields_by_name['connectRequest'].message_type = _CONNECTREQ
 _REQUEST.fields_by_name['disconnectRequest'].message_type = _DISCONNECTREQ
 _REQUEST.fields_by_name['stateReq'].message_type = _STATEREQ
+_REQUEST.fields_by_name['getAddressReq'].message_type = _GETADDRESSREQ
+_REQUEST.fields_by_name['getNameReq'].message_type = _GETNAMEREQ
+_REQUEST.fields_by_name['getClusterNameReq'].message_type = _GETCLUSTERNAMEREQ
+_REQUEST.fields_by_name['printProtoReq'].message_type = _PRINTPROTOCOLSPECREQ
+_REQUEST.fields_by_name['getPropertyReq'].message_type = _GETPROPERTYREQ
+_REQUEST.fields_by_name['setStatsReq'].message_type = _SETSTATSREQ
+_REQUEST.fields_by_name['getStatReq'].message_type = _GETSTATSREQ
+_REQUEST.fields_by_name['dumpStatsReq'].message_type = _DUMPSTATSREQ
+_REQUEST.fields_by_name['setDiscardOwnMsgReq'].message_type = _SETDISCARDOWNMSGREQ
+_REQUEST.fields_by_name['getDiscardOwnMsgReq'].message_type = _GETDISCARDOWNMSGREQ
+_REQUEST.fields_by_name['getStateReq'].message_type = _GETSTATEREQ
+_REQUEST.fields_by_name['isStateReq'].message_type = _ISSTATEREQ
+_REQUEST.fields_by_name['pyReqMsg'].message_type = _REQMSGFORPYCLIENT
 _REQUEST.oneofs_by_name['oneType'].fields.append(
-  _REQUEST.fields_by_name['messageRequest'])
-_REQUEST.fields_by_name['messageRequest'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+  _REQUEST.fields_by_name['messageReqRep'])
+_REQUEST.fields_by_name['messageReqRep'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
 _REQUEST.oneofs_by_name['oneType'].fields.append(
   _REQUEST.fields_by_name['connectRequest'])
 _REQUEST.fields_by_name['connectRequest'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
@@ -680,15 +2398,69 @@ _REQUEST.fields_by_name['disconnectRequest'].containing_oneof = _REQUEST.oneofs_
 _REQUEST.oneofs_by_name['oneType'].fields.append(
   _REQUEST.fields_by_name['stateReq'])
 _REQUEST.fields_by_name['stateReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
-_RESPONSE.fields_by_name['messageResponse'].message_type = _MESSAGEREP
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['getAddressReq'])
+_REQUEST.fields_by_name['getAddressReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['getNameReq'])
+_REQUEST.fields_by_name['getNameReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['getClusterNameReq'])
+_REQUEST.fields_by_name['getClusterNameReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['printProtoReq'])
+_REQUEST.fields_by_name['printProtoReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['getPropertyReq'])
+_REQUEST.fields_by_name['getPropertyReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['setStatsReq'])
+_REQUEST.fields_by_name['setStatsReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['getStatReq'])
+_REQUEST.fields_by_name['getStatReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['dumpStatsReq'])
+_REQUEST.fields_by_name['dumpStatsReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['setDiscardOwnMsgReq'])
+_REQUEST.fields_by_name['setDiscardOwnMsgReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['getDiscardOwnMsgReq'])
+_REQUEST.fields_by_name['getDiscardOwnMsgReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['getStateReq'])
+_REQUEST.fields_by_name['getStateReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['isStateReq'])
+_REQUEST.fields_by_name['isStateReq'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_REQUEST.oneofs_by_name['oneType'].fields.append(
+  _REQUEST.fields_by_name['pyReqMsg'])
+_REQUEST.fields_by_name['pyReqMsg'].containing_oneof = _REQUEST.oneofs_by_name['oneType']
+_RESPONSE.fields_by_name['messageReqRep'].message_type = _MESSAGEREQREP
 _RESPONSE.fields_by_name['connectResponse'].message_type = _CONNECTREP
 _RESPONSE.fields_by_name['disconnectResponse'].message_type = _DISCONNECTREP
 _RESPONSE.fields_by_name['updateResponse'].message_type = _UPDATEREP
 _RESPONSE.fields_by_name['viewResponse'].message_type = _VIEWREP
+_RESPONSE.fields_by_name['viewRep_server'].message_type = _VIEWREP_SERVER
+_RESPONSE.fields_by_name['updateNameCache'].message_type = _UPDATENAMECACHEREP
 _RESPONSE.fields_by_name['stateRep'].message_type = _STATEREP
+_RESPONSE.fields_by_name['getAddressRep'].message_type = _GETADDRESSREP
+_RESPONSE.fields_by_name['getNameRep'].message_type = _GETNAMEREP
+_RESPONSE.fields_by_name['getClusterNameRep'].message_type = _GETCLUSTERNAMEREP
+_RESPONSE.fields_by_name['printProtoRep'].message_type = _PRINTPROTOCOLSPECREP
+_RESPONSE.fields_by_name['getPropertyRep'].message_type = _GETPROPERTYREP
+_RESPONSE.fields_by_name['setStatsRep'].message_type = _SETSTATSREP
+_RESPONSE.fields_by_name['getStatsRep'].message_type = _GETSTATSREP
+_RESPONSE.fields_by_name['dumpStatsRep'].message_type = _DUMPSTATSREP
+_RESPONSE.fields_by_name['setDiscardOwnRep'].message_type = _SETDISCARDOWNMSGREP
+_RESPONSE.fields_by_name['getDiscardOwnRep'].message_type = _GETDISCARDOWNMSGREP
+_RESPONSE.fields_by_name['getStateRep'].message_type = _GETSTATEREP
+_RESPONSE.fields_by_name['isStateRep'].message_type = _ISSTATEREP
+_RESPONSE.fields_by_name['pyRepMsg'].message_type = _REPMSGFORPYCLIENT
 _RESPONSE.oneofs_by_name['oneType'].fields.append(
-  _RESPONSE.fields_by_name['messageResponse'])
-_RESPONSE.fields_by_name['messageResponse'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+  _RESPONSE.fields_by_name['messageReqRep'])
+_RESPONSE.fields_by_name['messageReqRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
 _RESPONSE.oneofs_by_name['oneType'].fields.append(
   _RESPONSE.fields_by_name['connectResponse'])
 _RESPONSE.fields_by_name['connectResponse'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
@@ -702,14 +2474,142 @@ _RESPONSE.oneofs_by_name['oneType'].fields.append(
   _RESPONSE.fields_by_name['viewResponse'])
 _RESPONSE.fields_by_name['viewResponse'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
 _RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['viewRep_server'])
+_RESPONSE.fields_by_name['viewRep_server'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['updateNameCache'])
+_RESPONSE.fields_by_name['updateNameCache'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
   _RESPONSE.fields_by_name['stateRep'])
 _RESPONSE.fields_by_name['stateRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['getAddressRep'])
+_RESPONSE.fields_by_name['getAddressRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['getNameRep'])
+_RESPONSE.fields_by_name['getNameRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['getClusterNameRep'])
+_RESPONSE.fields_by_name['getClusterNameRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['printProtoRep'])
+_RESPONSE.fields_by_name['printProtoRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['getPropertyRep'])
+_RESPONSE.fields_by_name['getPropertyRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['setStatsRep'])
+_RESPONSE.fields_by_name['setStatsRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['getStatsRep'])
+_RESPONSE.fields_by_name['getStatsRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['dumpStatsRep'])
+_RESPONSE.fields_by_name['dumpStatsRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['setDiscardOwnRep'])
+_RESPONSE.fields_by_name['setDiscardOwnRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['getDiscardOwnRep'])
+_RESPONSE.fields_by_name['getDiscardOwnRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['getStateRep'])
+_RESPONSE.fields_by_name['getStateRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['isStateRep'])
+_RESPONSE.fields_by_name['isStateRep'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_RESPONSE.oneofs_by_name['oneType'].fields.append(
+  _RESPONSE.fields_by_name['pyRepMsg'])
+_RESPONSE.fields_by_name['pyRepMsg'].containing_oneof = _RESPONSE.oneofs_by_name['oneType']
+_CHANNELMSG.fields_by_name['exchangeMsg'].message_type = _EXCHANGEMSG
+_CHANNELMSG.fields_by_name['updateReqBetweenNodes'].message_type = _UPDATEREQBETWEENNODES
+_CHANNELMSG.fields_by_name['updateRepBetweenNodes'].message_type = _UPDATEREPBETWEENNODES
+_CHANNELMSG.oneofs_by_name['oneType'].fields.append(
+  _CHANNELMSG.fields_by_name['exchangeMsg'])
+_CHANNELMSG.fields_by_name['exchangeMsg'].containing_oneof = _CHANNELMSG.oneofs_by_name['oneType']
+_CHANNELMSG.oneofs_by_name['oneType'].fields.append(
+  _CHANNELMSG.fields_by_name['updateReqBetweenNodes'])
+_CHANNELMSG.fields_by_name['updateReqBetweenNodes'].containing_oneof = _CHANNELMSG.oneofs_by_name['oneType']
+_CHANNELMSG.oneofs_by_name['oneType'].fields.append(
+  _CHANNELMSG.fields_by_name['updateRepBetweenNodes'])
+_CHANNELMSG.fields_by_name['updateRepBetweenNodes'].containing_oneof = _CHANNELMSG.oneofs_by_name['oneType']
+_UPDATEREPBETWEENNODES.fields_by_name['nameCache'].message_type = _UPDATENAMECACHEREP
+_UPDATEREPBETWEENNODES.fields_by_name['clientView'].message_type = _VIEWREP
+_REQMSGFORPYCLIENT.fields_by_name['conReqPy'].message_type = _CONNECTREQPY
+_REQMSGFORPYCLIENT.fields_by_name['disconReqPy'].message_type = _DISCONNECTREQPY
+_REQMSGFORPYCLIENT.fields_by_name['msgReqPy'].message_type = _MESSAGEREQPY
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['conReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['conReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['disconReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['disconReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['msgReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['msgReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.fields_by_name['conRepPy'].message_type = _CONNECTREPPY
+_REPMSGFORPYCLIENT.fields_by_name['disconRepPy'].message_type = _DISCONNECTREPPY
+_REPMSGFORPYCLIENT.fields_by_name['msgRepPy'].message_type = _MESSAGEREPPY
+_REPMSGFORPYCLIENT.fields_by_name['stateRepPy'].message_type = _STATEREPPY
+_REPMSGFORPYCLIENT.fields_by_name['clientViewPy'].message_type = _CLIENTVIEWPY
+_REPMSGFORPYCLIENT.fields_by_name['serverViewPy'].message_type = _SERVERVIEWPY
+_REPMSGFORPYCLIENT.fields_by_name['updateAddPy'].message_type = _UPDATEADDPY
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['conRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['conRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['disconRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['disconRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['msgRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['msgRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['stateRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['stateRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['clientViewPy'])
+_REPMSGFORPYCLIENT.fields_by_name['clientViewPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['serverViewPy'])
+_REPMSGFORPYCLIENT.fields_by_name['serverViewPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['updateAddPy'])
+_REPMSGFORPYCLIENT.fields_by_name['updateAddPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
 DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
 DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
+DESCRIPTOR.message_types_by_name['IsStateReq'] = _ISSTATEREQ
+DESCRIPTOR.message_types_by_name['IsStateRep'] = _ISSTATEREP
+DESCRIPTOR.message_types_by_name['GetStateReq'] = _GETSTATEREQ
+DESCRIPTOR.message_types_by_name['GetStateRep'] = _GETSTATEREP
+DESCRIPTOR.message_types_by_name['SetDiscardOwnMsgReq'] = _SETDISCARDOWNMSGREQ
+DESCRIPTOR.message_types_by_name['SetDiscardOwnMsgRep'] = _SETDISCARDOWNMSGREP
+DESCRIPTOR.message_types_by_name['GetDiscardOwnMsgReq'] = _GETDISCARDOWNMSGREQ
+DESCRIPTOR.message_types_by_name['GetDiscardOwnMsgRep'] = _GETDISCARDOWNMSGREP
+DESCRIPTOR.message_types_by_name['DumpStatsReq'] = _DUMPSTATSREQ
+DESCRIPTOR.message_types_by_name['DumpStatsRep'] = _DUMPSTATSREP
+DESCRIPTOR.message_types_by_name['GetStatsReq'] = _GETSTATSREQ
+DESCRIPTOR.message_types_by_name['GetStatsRep'] = _GETSTATSREP
+DESCRIPTOR.message_types_by_name['SetStatsReq'] = _SETSTATSREQ
+DESCRIPTOR.message_types_by_name['SetStatsRep'] = _SETSTATSREP
+DESCRIPTOR.message_types_by_name['GetPropertyReq'] = _GETPROPERTYREQ
+DESCRIPTOR.message_types_by_name['GetPropertyRep'] = _GETPROPERTYREP
+DESCRIPTOR.message_types_by_name['ChannelMsg'] = _CHANNELMSG
+DESCRIPTOR.message_types_by_name['ExchangeMsg'] = _EXCHANGEMSG
+DESCRIPTOR.message_types_by_name['UpdateReqBetweenNodes'] = _UPDATEREQBETWEENNODES
+DESCRIPTOR.message_types_by_name['UpdateRepBetweenNodes'] = _UPDATEREPBETWEENNODES
+DESCRIPTOR.message_types_by_name['UpdateNameCacheRep'] = _UPDATENAMECACHEREP
+DESCRIPTOR.message_types_by_name['PrintProtocolSpecReq'] = _PRINTPROTOCOLSPECREQ
+DESCRIPTOR.message_types_by_name['PrintProtocolSpecRep'] = _PRINTPROTOCOLSPECREP
+DESCRIPTOR.message_types_by_name['GetClusterNameReq'] = _GETCLUSTERNAMEREQ
+DESCRIPTOR.message_types_by_name['GetClusterNameRep'] = _GETCLUSTERNAMEREP
+DESCRIPTOR.message_types_by_name['GetNameReq'] = _GETNAMEREQ
+DESCRIPTOR.message_types_by_name['GetNameRep'] = _GETNAMEREP
+DESCRIPTOR.message_types_by_name['GetAddressReq'] = _GETADDRESSREQ
+DESCRIPTOR.message_types_by_name['GetAddressRep'] = _GETADDRESSREP
+DESCRIPTOR.message_types_by_name['ViewRep_server'] = _VIEWREP_SERVER
 DESCRIPTOR.message_types_by_name['ViewRep'] = _VIEWREP
 DESCRIPTOR.message_types_by_name['UpdateRep'] = _UPDATEREP
-DESCRIPTOR.message_types_by_name['MessageReq'] = _MESSAGEREQ
-DESCRIPTOR.message_types_by_name['MessageRep'] = _MESSAGEREP
+DESCRIPTOR.message_types_by_name['MessageReqRep'] = _MESSAGEREQREP
 DESCRIPTOR.message_types_by_name['ConnectReq'] = _CONNECTREQ
 DESCRIPTOR.message_types_by_name['ConnectRep'] = _CONNECTREP
 DESCRIPTOR.message_types_by_name['DisconnectReq'] = _DISCONNECTREQ
@@ -718,6 +2618,18 @@ DESCRIPTOR.message_types_by_name['ReqAsk'] = _REQASK
 DESCRIPTOR.message_types_by_name['RepAsk'] = _REPASK
 DESCRIPTOR.message_types_by_name['StateReq'] = _STATEREQ
 DESCRIPTOR.message_types_by_name['StateRep'] = _STATEREP
+DESCRIPTOR.message_types_by_name['ReqMsgForPyClient'] = _REQMSGFORPYCLIENT
+DESCRIPTOR.message_types_by_name['RepMsgForPyClient'] = _REPMSGFORPYCLIENT
+DESCRIPTOR.message_types_by_name['ConnectReqPy'] = _CONNECTREQPY
+DESCRIPTOR.message_types_by_name['DisconnectReqPy'] = _DISCONNECTREQPY
+DESCRIPTOR.message_types_by_name['MessageReqPy'] = _MESSAGEREQPY
+DESCRIPTOR.message_types_by_name['ConnectRepPy'] = _CONNECTREPPY
+DESCRIPTOR.message_types_by_name['DisconnectRepPy'] = _DISCONNECTREPPY
+DESCRIPTOR.message_types_by_name['MessageRepPy'] = _MESSAGEREPPY
+DESCRIPTOR.message_types_by_name['ClientViewPy'] = _CLIENTVIEWPY
+DESCRIPTOR.message_types_by_name['ServerViewPy'] = _SERVERVIEWPY
+DESCRIPTOR.message_types_by_name['UpdateAddPy'] = _UPDATEADDPY
+DESCRIPTOR.message_types_by_name['StateRepPy'] = _STATEREPPY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,), {
@@ -734,6 +2646,216 @@ Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Messag
   })
 _sym_db.RegisterMessage(Response)
 
+IsStateReq = _reflection.GeneratedProtocolMessageType('IsStateReq', (_message.Message,), {
+  'DESCRIPTOR' : _ISSTATEREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.IsStateReq)
+  })
+_sym_db.RegisterMessage(IsStateReq)
+
+IsStateRep = _reflection.GeneratedProtocolMessageType('IsStateRep', (_message.Message,), {
+  'DESCRIPTOR' : _ISSTATEREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.IsStateRep)
+  })
+_sym_db.RegisterMessage(IsStateRep)
+
+GetStateReq = _reflection.GeneratedProtocolMessageType('GetStateReq', (_message.Message,), {
+  'DESCRIPTOR' : _GETSTATEREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetStateReq)
+  })
+_sym_db.RegisterMessage(GetStateReq)
+
+GetStateRep = _reflection.GeneratedProtocolMessageType('GetStateRep', (_message.Message,), {
+  'DESCRIPTOR' : _GETSTATEREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetStateRep)
+  })
+_sym_db.RegisterMessage(GetStateRep)
+
+SetDiscardOwnMsgReq = _reflection.GeneratedProtocolMessageType('SetDiscardOwnMsgReq', (_message.Message,), {
+  'DESCRIPTOR' : _SETDISCARDOWNMSGREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.SetDiscardOwnMsgReq)
+  })
+_sym_db.RegisterMessage(SetDiscardOwnMsgReq)
+
+SetDiscardOwnMsgRep = _reflection.GeneratedProtocolMessageType('SetDiscardOwnMsgRep', (_message.Message,), {
+  'DESCRIPTOR' : _SETDISCARDOWNMSGREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.SetDiscardOwnMsgRep)
+  })
+_sym_db.RegisterMessage(SetDiscardOwnMsgRep)
+
+GetDiscardOwnMsgReq = _reflection.GeneratedProtocolMessageType('GetDiscardOwnMsgReq', (_message.Message,), {
+  'DESCRIPTOR' : _GETDISCARDOWNMSGREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetDiscardOwnMsgReq)
+  })
+_sym_db.RegisterMessage(GetDiscardOwnMsgReq)
+
+GetDiscardOwnMsgRep = _reflection.GeneratedProtocolMessageType('GetDiscardOwnMsgRep', (_message.Message,), {
+  'DESCRIPTOR' : _GETDISCARDOWNMSGREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetDiscardOwnMsgRep)
+  })
+_sym_db.RegisterMessage(GetDiscardOwnMsgRep)
+
+DumpStatsReq = _reflection.GeneratedProtocolMessageType('DumpStatsReq', (_message.Message,), {
+  'DESCRIPTOR' : _DUMPSTATSREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.DumpStatsReq)
+  })
+_sym_db.RegisterMessage(DumpStatsReq)
+
+DumpStatsRep = _reflection.GeneratedProtocolMessageType('DumpStatsRep', (_message.Message,), {
+  'DESCRIPTOR' : _DUMPSTATSREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.DumpStatsRep)
+  })
+_sym_db.RegisterMessage(DumpStatsRep)
+
+GetStatsReq = _reflection.GeneratedProtocolMessageType('GetStatsReq', (_message.Message,), {
+  'DESCRIPTOR' : _GETSTATSREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetStatsReq)
+  })
+_sym_db.RegisterMessage(GetStatsReq)
+
+GetStatsRep = _reflection.GeneratedProtocolMessageType('GetStatsRep', (_message.Message,), {
+  'DESCRIPTOR' : _GETSTATSREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetStatsRep)
+  })
+_sym_db.RegisterMessage(GetStatsRep)
+
+SetStatsReq = _reflection.GeneratedProtocolMessageType('SetStatsReq', (_message.Message,), {
+  'DESCRIPTOR' : _SETSTATSREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.SetStatsReq)
+  })
+_sym_db.RegisterMessage(SetStatsReq)
+
+SetStatsRep = _reflection.GeneratedProtocolMessageType('SetStatsRep', (_message.Message,), {
+  'DESCRIPTOR' : _SETSTATSREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.SetStatsRep)
+  })
+_sym_db.RegisterMessage(SetStatsRep)
+
+GetPropertyReq = _reflection.GeneratedProtocolMessageType('GetPropertyReq', (_message.Message,), {
+  'DESCRIPTOR' : _GETPROPERTYREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetPropertyReq)
+  })
+_sym_db.RegisterMessage(GetPropertyReq)
+
+GetPropertyRep = _reflection.GeneratedProtocolMessageType('GetPropertyRep', (_message.Message,), {
+  'DESCRIPTOR' : _GETPROPERTYREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetPropertyRep)
+  })
+_sym_db.RegisterMessage(GetPropertyRep)
+
+ChannelMsg = _reflection.GeneratedProtocolMessageType('ChannelMsg', (_message.Message,), {
+  'DESCRIPTOR' : _CHANNELMSG,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.ChannelMsg)
+  })
+_sym_db.RegisterMessage(ChannelMsg)
+
+ExchangeMsg = _reflection.GeneratedProtocolMessageType('ExchangeMsg', (_message.Message,), {
+  'DESCRIPTOR' : _EXCHANGEMSG,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.ExchangeMsg)
+  })
+_sym_db.RegisterMessage(ExchangeMsg)
+
+UpdateReqBetweenNodes = _reflection.GeneratedProtocolMessageType('UpdateReqBetweenNodes', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEREQBETWEENNODES,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.UpdateReqBetweenNodes)
+  })
+_sym_db.RegisterMessage(UpdateReqBetweenNodes)
+
+UpdateRepBetweenNodes = _reflection.GeneratedProtocolMessageType('UpdateRepBetweenNodes', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEREPBETWEENNODES,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.UpdateRepBetweenNodes)
+  })
+_sym_db.RegisterMessage(UpdateRepBetweenNodes)
+
+UpdateNameCacheRep = _reflection.GeneratedProtocolMessageType('UpdateNameCacheRep', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATENAMECACHEREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.UpdateNameCacheRep)
+  })
+_sym_db.RegisterMessage(UpdateNameCacheRep)
+
+PrintProtocolSpecReq = _reflection.GeneratedProtocolMessageType('PrintProtocolSpecReq', (_message.Message,), {
+  'DESCRIPTOR' : _PRINTPROTOCOLSPECREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.PrintProtocolSpecReq)
+  })
+_sym_db.RegisterMessage(PrintProtocolSpecReq)
+
+PrintProtocolSpecRep = _reflection.GeneratedProtocolMessageType('PrintProtocolSpecRep', (_message.Message,), {
+  'DESCRIPTOR' : _PRINTPROTOCOLSPECREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.PrintProtocolSpecRep)
+  })
+_sym_db.RegisterMessage(PrintProtocolSpecRep)
+
+GetClusterNameReq = _reflection.GeneratedProtocolMessageType('GetClusterNameReq', (_message.Message,), {
+  'DESCRIPTOR' : _GETCLUSTERNAMEREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetClusterNameReq)
+  })
+_sym_db.RegisterMessage(GetClusterNameReq)
+
+GetClusterNameRep = _reflection.GeneratedProtocolMessageType('GetClusterNameRep', (_message.Message,), {
+  'DESCRIPTOR' : _GETCLUSTERNAMEREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetClusterNameRep)
+  })
+_sym_db.RegisterMessage(GetClusterNameRep)
+
+GetNameReq = _reflection.GeneratedProtocolMessageType('GetNameReq', (_message.Message,), {
+  'DESCRIPTOR' : _GETNAMEREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetNameReq)
+  })
+_sym_db.RegisterMessage(GetNameReq)
+
+GetNameRep = _reflection.GeneratedProtocolMessageType('GetNameRep', (_message.Message,), {
+  'DESCRIPTOR' : _GETNAMEREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetNameRep)
+  })
+_sym_db.RegisterMessage(GetNameRep)
+
+GetAddressReq = _reflection.GeneratedProtocolMessageType('GetAddressReq', (_message.Message,), {
+  'DESCRIPTOR' : _GETADDRESSREQ,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetAddressReq)
+  })
+_sym_db.RegisterMessage(GetAddressReq)
+
+GetAddressRep = _reflection.GeneratedProtocolMessageType('GetAddressRep', (_message.Message,), {
+  'DESCRIPTOR' : _GETADDRESSREP,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.GetAddressRep)
+  })
+_sym_db.RegisterMessage(GetAddressRep)
+
+ViewRep_server = _reflection.GeneratedProtocolMessageType('ViewRep_server', (_message.Message,), {
+  'DESCRIPTOR' : _VIEWREP_SERVER,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.ViewRep_server)
+  })
+_sym_db.RegisterMessage(ViewRep_server)
+
 ViewRep = _reflection.GeneratedProtocolMessageType('ViewRep', (_message.Message,), {
   'DESCRIPTOR' : _VIEWREP,
   '__module__' : 'jchannel_pb2'
@@ -748,19 +2870,12 @@ UpdateRep = _reflection.GeneratedProtocolMessageType('UpdateRep', (_message.Mess
   })
 _sym_db.RegisterMessage(UpdateRep)
 
-MessageReq = _reflection.GeneratedProtocolMessageType('MessageReq', (_message.Message,), {
-  'DESCRIPTOR' : _MESSAGEREQ,
+MessageReqRep = _reflection.GeneratedProtocolMessageType('MessageReqRep', (_message.Message,), {
+  'DESCRIPTOR' : _MESSAGEREQREP,
   '__module__' : 'jchannel_pb2'
-  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.MessageReq)
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.MessageReqRep)
   })
-_sym_db.RegisterMessage(MessageReq)
-
-MessageRep = _reflection.GeneratedProtocolMessageType('MessageRep', (_message.Message,), {
-  'DESCRIPTOR' : _MESSAGEREP,
-  '__module__' : 'jchannel_pb2'
-  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.MessageRep)
-  })
-_sym_db.RegisterMessage(MessageRep)
+_sym_db.RegisterMessage(MessageReqRep)
 
 ConnectReq = _reflection.GeneratedProtocolMessageType('ConnectReq', (_message.Message,), {
   'DESCRIPTOR' : _CONNECTREQ,
@@ -818,6 +2933,90 @@ StateRep = _reflection.GeneratedProtocolMessageType('StateRep', (_message.Messag
   })
 _sym_db.RegisterMessage(StateRep)
 
+ReqMsgForPyClient = _reflection.GeneratedProtocolMessageType('ReqMsgForPyClient', (_message.Message,), {
+  'DESCRIPTOR' : _REQMSGFORPYCLIENT,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.ReqMsgForPyClient)
+  })
+_sym_db.RegisterMessage(ReqMsgForPyClient)
+
+RepMsgForPyClient = _reflection.GeneratedProtocolMessageType('RepMsgForPyClient', (_message.Message,), {
+  'DESCRIPTOR' : _REPMSGFORPYCLIENT,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.RepMsgForPyClient)
+  })
+_sym_db.RegisterMessage(RepMsgForPyClient)
+
+ConnectReqPy = _reflection.GeneratedProtocolMessageType('ConnectReqPy', (_message.Message,), {
+  'DESCRIPTOR' : _CONNECTREQPY,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.ConnectReqPy)
+  })
+_sym_db.RegisterMessage(ConnectReqPy)
+
+DisconnectReqPy = _reflection.GeneratedProtocolMessageType('DisconnectReqPy', (_message.Message,), {
+  'DESCRIPTOR' : _DISCONNECTREQPY,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.DisconnectReqPy)
+  })
+_sym_db.RegisterMessage(DisconnectReqPy)
+
+MessageReqPy = _reflection.GeneratedProtocolMessageType('MessageReqPy', (_message.Message,), {
+  'DESCRIPTOR' : _MESSAGEREQPY,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.MessageReqPy)
+  })
+_sym_db.RegisterMessage(MessageReqPy)
+
+ConnectRepPy = _reflection.GeneratedProtocolMessageType('ConnectRepPy', (_message.Message,), {
+  'DESCRIPTOR' : _CONNECTREPPY,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.ConnectRepPy)
+  })
+_sym_db.RegisterMessage(ConnectRepPy)
+
+DisconnectRepPy = _reflection.GeneratedProtocolMessageType('DisconnectRepPy', (_message.Message,), {
+  'DESCRIPTOR' : _DISCONNECTREPPY,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.DisconnectRepPy)
+  })
+_sym_db.RegisterMessage(DisconnectRepPy)
+
+MessageRepPy = _reflection.GeneratedProtocolMessageType('MessageRepPy', (_message.Message,), {
+  'DESCRIPTOR' : _MESSAGEREPPY,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.MessageRepPy)
+  })
+_sym_db.RegisterMessage(MessageRepPy)
+
+ClientViewPy = _reflection.GeneratedProtocolMessageType('ClientViewPy', (_message.Message,), {
+  'DESCRIPTOR' : _CLIENTVIEWPY,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.ClientViewPy)
+  })
+_sym_db.RegisterMessage(ClientViewPy)
+
+ServerViewPy = _reflection.GeneratedProtocolMessageType('ServerViewPy', (_message.Message,), {
+  'DESCRIPTOR' : _SERVERVIEWPY,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.ServerViewPy)
+  })
+_sym_db.RegisterMessage(ServerViewPy)
+
+UpdateAddPy = _reflection.GeneratedProtocolMessageType('UpdateAddPy', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEADDPY,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.UpdateAddPy)
+  })
+_sym_db.RegisterMessage(UpdateAddPy)
+
+StateRepPy = _reflection.GeneratedProtocolMessageType('StateRepPy', (_message.Message,), {
+  'DESCRIPTOR' : _STATEREPPY,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.StateRepPy)
+  })
+_sym_db.RegisterMessage(StateRepPy)
+
 
 
 _JCHANNELSSERVICE = _descriptor.ServiceDescriptor(
@@ -827,8 +3026,8 @@ _JCHANNELSSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1378,
-  serialized_end=1533,
+  serialized_start=5712,
+  serialized_end=5867,
   methods=[
   _descriptor.MethodDescriptor(
     name='connect',

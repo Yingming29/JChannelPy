@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package cn.yingming.grpc1;
+
 service JChannelsService{
   rpc connect(stream Request) returns (stream Response) {
   }
@@ -9,62 +10,184 @@ service JChannelsService{
 }
 message Request{
   oneof oneType{
-    MessageReq messageRequest = 1;
+    MessageReqRep messageReqRep = 1;
     ConnectReq connectRequest = 2;
     DisconnectReq disconnectRequest = 3;
-    StateReq stateReq = 4;
+    StateReq stateReq = 4;  //
+    GetAddressReq getAddressReq = 7;
+    GetNameReq getNameReq = 8;
+    GetClusterNameReq getClusterNameReq = 9;
+    PrintProtocolSpecReq printProtoReq = 10;
+    GetPropertyReq getPropertyReq = 11;
+    SetStatsReq setStatsReq = 12;
+    GetStatsReq getStatReq = 13;
+    DumpStatsReq dumpStatsReq = 14;
+    SetDiscardOwnMsgReq setDiscardOwnMsgReq = 15;
+    GetDiscardOwnMsgReq getDiscardOwnMsgReq = 16;
+    GetStateReq getStateReq = 17;
+    IsStateReq isStateReq = 18;
+    ReqMsgForPyClient pyReqMsg = 19;
   }
 }
 message Response{
   oneof oneType{
-    MessageRep messageResponse = 1;
+    MessageReqRep messageReqRep = 1;
     ConnectRep connectResponse = 2;
     DisconnectRep disconnectResponse = 3;
     UpdateRep updateResponse = 4;
     ViewRep viewResponse = 5;
-    StateRep stateRep = 6;
+    ViewRep_server viewRep_server = 6;
+    UpdateNameCacheRep updateNameCache = 7;
+    StateRep stateRep = 8;
+    GetAddressRep getAddressRep = 11;
+    GetNameRep getNameRep = 12;
+    GetClusterNameRep getClusterNameRep = 13;
+    PrintProtocolSpecRep printProtoRep = 14;
+    GetPropertyRep getPropertyRep = 15;
+    SetStatsRep setStatsRep = 16;
+    GetStatsRep getStatsRep = 17;
+    DumpStatsRep dumpStatsRep = 18;
+    SetDiscardOwnMsgRep setDiscardOwnRep = 19;
+    GetDiscardOwnMsgRep getDiscardOwnRep = 20;
+    GetStateRep getStateRep = 21;
+    IsStateRep isStateRep = 22;
+    RepMsgForPyClient pyRepMsg = 23;
   }
 }
+message IsStateReq{
+  string jchannel_address = 1;
+  string type = 2;
+}
+message IsStateRep{
+  bool result = 1;
+}
+message GetStateReq{
+  string jchannel_address = 1;
+}
+message GetStateRep{
+  string state = 1;
+}
+message SetDiscardOwnMsgReq{
+  string jchannal_address = 1;
+  bool discard = 2;
+}
+message SetDiscardOwnMsgRep{
+  bool discard = 1;
+}
+message GetDiscardOwnMsgReq{
+  string jchannel_address = 1;
+}
+message GetDiscardOwnMsgRep{
+  bool discard = 1;
+}
+message DumpStatsReq{
+  string jchannel_address = 1;
+  string protocol_name = 2;
+  repeated string attrs = 3;
+}
+message DumpStatsRep{
+  bytes serializeMap = 1;
+}
+message GetStatsReq{
+  string jchannel_address = 1;
+}
+message GetStatsRep{
+  bool stats = 1;
+}
+message SetStatsReq{
+  string jchannel_address = 1;
+  bool stats = 2;
+}
+message SetStatsRep{
+  bool stats = 1;
+}
+message GetPropertyReq{
+  string jchannel_address = 1;
+}
+message GetPropertyRep{
+  string properties = 1;
+}
+message ChannelMsg{
+  oneof oneType{
+    ExchangeMsg exchangeMsg = 1;
+    UpdateReqBetweenNodes updateReqBetweenNodes = 2;
+    UpdateRepBetweenNodes updateRepBetweenNodes = 3;
+  }
+}
+message ExchangeMsg{
+  string type = 1;
+  string content_str = 2;
+  bytes content_byt = 3;
+}
+message UpdateReqBetweenNodes{
+  bytes address = 1;
+}
+message UpdateRepBetweenNodes{
+  UpdateNameCacheRep nameCache = 1;
+  ViewRep clientView = 2;
+}
+message UpdateNameCacheRep{
+  repeated bytes address = 1;
+  repeated string logical_name = 2;
+}
+message PrintProtocolSpecReq{
+  string jchannel_address = 1;
+  bool include_props = 2;
+}
+message PrintProtocolSpecRep{
+  string protocolStackSpec = 1;
+}
+message GetClusterNameReq{
+  string jchannel_address = 1;
+}
+message GetClusterNameRep{
+  string cluster_name = 1;
+}
+message GetNameReq{
+  string jchannel_address = 1;
+}
+message GetNameRep{
+  string name = 1;
+}
+message GetAddressReq{
+  string jchannel_address = 1;
+}
+message GetAddressRep{
+  bytes address = 1;
+  bool isWork = 2;
+  string other = 3;
+}
+message ViewRep_server{
+  string sender = 1; // string of Address of real JChannel server who sends this View message
+  bytes view_byte = 2;
+}
 message ViewRep{
-  string creator = 1;
-  int32 viewNum = 2;
-  int32 size = 3;
-  string jchannel_addresses = 4;
+  bytes view = 1;
 }
 
 message UpdateRep{
   string addresses = 1;
 }
-message MessageReq{
-  string source = 1;  // uuid
-  string jchannel_address = 2;  // the fake address of client jchannel, sender
-  string cluster = 3;     // the cluster of jchannel-client
-  string content = 4;     // content of message
-  string timestamp = 5;   // time
-  string destination = 6;  // "" means the broadcast in this cluster, receivers
-}
-message MessageRep{
-  string jchannel_address = 1; // sender
-  string content = 2;
+message MessageReqRep{
+  bytes messageObj = 1;
+  int32 type = 2;
 }
 
 message ConnectReq {
-  string source = 1;  // uuid
-  string jchannel_address = 2;   // fake addresss of jchannel client
-  string cluster = 3;     // cluster
-  string timestamp = 4;
+  bool reconnect = 1;         // reconnect and jchannel_address will be used in the reconnection part.
+  string logical_name = 2;
+  bytes jchann_address_byte = 3;
 }
 
 message ConnectRep {
   bool result = 1;
+  bytes address = 2;    // generated Address object's byte
+  string logical_name = 3;   // generated Address 'logical name
 }
 
 
 message DisconnectReq{
-  string source = 1;
-  string jchannel_address = 2;
-  string cluster = 3;
-  string timestamp = 4;
+  bytes jchannel_address = 1;
 }
 message DisconnectRep{
   bool result = 1;
@@ -77,12 +200,81 @@ message RepAsk{
   bool survival = 1;
 }
 message StateReq{
-  string source = 1;
-  string cluster = 2;
-  string jchannel_address = 3;
+  bytes jchannel_address = 1;
+  bytes target = 2;
+  uint64 timeout = 3;
 }
+
 message StateRep{
-  int32 size = 1;
-  repeated string oneOfHistory = 2;
+  bytes jchannel_address = 1;
+  bytes state = 2;
+  bytes target = 3;
 }
+
+
+// some message types for python client
+message ReqMsgForPyClient{
+  oneof oneType{
+    ConnectReqPy conReqPy = 1;
+    DisconnectReqPy disconReqPy = 2;
+    MessageReqPy msgReqPy = 3;
+  }
+}
+
+message RepMsgForPyClient{
+  oneof oneType{
+    ConnectRepPy conRepPy = 1;
+    DisconnectRepPy disconRepPy = 2;
+    MessageRepPy msgRepPy = 3;
+    StateRepPy stateRepPy = 4;
+    ClientViewPy clientViewPy = 5;
+    ServerViewPy serverViewPy = 6;
+    UpdateAddPy updateAddPy = 7;
+  }
+}
+
+
+message ConnectReqPy{
+  bool reconnect = 1;
+  string logical_name = 2;
+}
+message DisconnectReqPy{
+  string logical_name = 1;
+}
+message MessageReqPy{
+  string source = 1;
+  string dest = 2;
+  string contentStr = 3;
+}
+message ConnectRepPy{
+  bool result = 1;
+  string logical_name = 2;
+}
+message DisconnectRepPy{
+  bool result = 1;
+}
+message MessageRepPy{
+  string source = 1;
+  string contentStr = 3;
+}
+message ClientViewPy{
+  int32 num = 1;
+  repeated string members = 2;
+  string coordinator = 3;
+  int32 size = 4;
+}
+message ServerViewPy{
+  int32 num = 1;
+  repeated string members = 2;
+  string coordinator = 3;
+  int32 size = 4;
+}
+message UpdateAddPy{
+  string addresses = 1;
+}
+message StateRepPy{
+  int32 size = 1;
+  repeated string line = 2;
+}
+
 
