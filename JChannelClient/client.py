@@ -7,7 +7,7 @@ import uuid
 import grpc
 import jchannel_pb2
 import jchannel_pb2_grpc
-
+from threading import Condition
 from concurrent import futures
 import datetime
 
@@ -19,13 +19,15 @@ class Client:
         self.logical_name = None
         self.lock = threading.RLock()
         # shared part
-        self.isWork = True
         self.msgList = []
         self.cluster = None
         self.clientStub = None
-        self.down = True
         self.clientMembers = []
         self.serverMembers = []
+        self.condition = threading.Condition()
+        self.isWork = False
+        self.down = False
+
     def start_stub(self):
         self.clientStub = ClientStub(self)
 
@@ -94,6 +96,7 @@ class test_iterator:
 class ClientStub:
     def __init__(self, client):
         self.client = client
+        self.condition = client.condition
         self.stubLock = threading.RLock()
         self.serverList = []
         self.channel = grpc.insecure_channel(self.client.address)
@@ -154,7 +157,7 @@ class ClientStub:
                 self.client.address = address
                 print("[Reconnection]: Reconnect successfully to server-" + self.client.address)
                 return True
-            if count > 5:
+            if count > 10:
                 break
         print("[Reconnection]: Reconnect many times, end.")
         return False
@@ -162,7 +165,7 @@ class ClientStub:
     def try_one_connect(self):
 
         ask_req = jchannel_pb2.ReqAsk(
-            source=self.client.uuid
+            source=self.client.logical_name
         )
 
         try:
@@ -180,6 +183,7 @@ class Control_thread(threading.Thread):
         self.iter_to_add = None
         self.client = shared_client
         self.control_lock = threading.RLock()
+        self.condition = self.client.condition
 
     def judge_request(self, input_string):
         # generate unicast messge
@@ -243,8 +247,19 @@ class Control_thread(threading.Thread):
                 read_thread.setDaemon(True)
                 read_thread.start()
             except:
+                print("= False")
+                self.control_lock.acquire()
+                try:
+                    self.client.isWork = False
+                finally:
+                    self.control_lock.release()
                 print("[Client Stub]: onError() of gRPC connection, the client needs to reconnect to the next server.")
-
+            with self.condition:
+                #print("wait")
+                self.condition.wait()
+                #print("break wait")
+                #print(str(self.client.isWork))
+                #print(str(self.client.down))
             # 4.3
             self.check_loop()
             # 4.4
@@ -256,16 +271,7 @@ class Control_thread(threading.Thread):
                 break
 
     def generate_connect_request(self):
-        if self.client.down is True:
-            connect_req = jchannel_pb2.Request(
-                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
-                    conReqPy=jchannel_pb2.ConnectReqPy(
-                        reconnect=True,
-                        logical_name=self.client.logical_name
-                    )
-                )
-            )
-        else:
+        if self.client.down is False and self.client.isWork is False:
             connect_req = jchannel_pb2.Request(
                 pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
                     conReqPy=jchannel_pb2.ConnectReqPy(
@@ -274,41 +280,58 @@ class Control_thread(threading.Thread):
                     )
                 )
             )
-        print("[py_client] The client calls connect() request to a server.")
-        lock = threading.RLock()
-        lock.acquire()
-        try:
-            self.client.isWork = True
-        finally:
-            lock.release()
+        else:
+            connect_req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    conReqPy=jchannel_pb2.ConnectReqPy(
+                        reconnect=True,
+                        logical_name=self.client.logical_name
+                    )
+                )
+            )
+        print("[py_client] The client calls connect() request to a server." + str(connect_req))
         return connect_req
 
     def check_loop(self):
-        # print("check loop: " + threading.currentThread().getName())
+
         while 1:
+
             if len(self.client.msgList) > 0 and self.client.isWork is True:
                 line = self.client.msgList[0]
                 msg_request = self.judge_request(line)
-                # print(self.client.isWork)
+
                 '''
                     1. Add the new request to the generator
                     2. Remove the input string from the shared list
                     '''
                 self.control_lock.acquire()
-
                 try:
                     del self.client.msgList[0]
                     # print("add a generated message to iterator")
                     self.iter_to_add.__add__(msg_request)
                 finally:
                     self.control_lock.release()
+            '''self.control_lock.acquire()
+            try:
+                print("--------")
+                print(str(self.client.isWork))
+                print(str(self.client.down))
+                print("--------")
+            finally:
+                self.control_lock.release()'''
 
             if self.client.isWork is False:
-                self.client.clientStub.channel.close()
+
+                #self.client.clientStub.channel.close()
                 # print("self.checked_isWork is False ")
+                #print("break1 in checkLoop")
                 break
             elif self.client.down is False:
-                sys.exit(0)
+                #print("break2 in checkLoop")
+                break
+                #sys.exit(0)
+            else:
+                continue
 
 
 class Read_response(threading.Thread):
@@ -318,14 +341,17 @@ class Read_response(threading.Thread):
         self.client_stub = stub
         self.lock = threading.RLock()
         self.client = shared_client
+        self.condition = self.client.condition
 
     def run(self):
 
         try:
             for response in self.read_stream:
+                #print("Read print response:" + str(response))
                 py_response = response.pyRepMsg
                 self.judgeResponse(py_response)
         except:
+            # print("readResponse make isWork = false")
             self.lock.acquire()
             try:
                 self.client.isWork = False
@@ -342,6 +368,17 @@ class Read_response(threading.Thread):
         if field == "conRepPy":
             print("Get connect() response from server, the generate address string is:"
                   + response.conRepPy.logical_name)
+            self.lock.acquire()
+            try:
+                self.client.logical_name = response.conRepPy.logical_name
+                self.client.down = True
+                self.client.isWork = True
+            finally:
+                self.lock.release()
+
+            with self.condition:
+                #print("notify")
+                self.condition.notify()
         elif field == "msgRepPy":
             self.client_stub.print_msg(response.msgRepPy)
         elif field == "updateAddPy":
@@ -354,28 +391,20 @@ class Read_response(threading.Thread):
                 self.lock.release()
         elif field == "clientViewPy":
             view = response.clientViewPy
+            self.client.clientMembers.clear()
+            if view.size > 0:
+                for i in view.members:
+                    self.client.clientMembers.append(i)
             print("** Client View:[" + str(view.coordinator) + "|" + str(view.num) + "] ("
-                  + str(view.size) + ")" + view.members)
-            self.lock.acquire()
-            try:
-                self.client.clientMembers.clear()
-                if view.size > 0:
-                    for i in view.members:
-                        self.client.clientMembers.append(i)
-            finally:
-                self.stubLock.release()
+                  + str(view.size) + ")" + str(self.client.clientMembers))
         elif field == "serverViewPy":
             view = response.serverViewPy
+            self.client.serverMembers.clear()
+            if view.size > 0:
+                for i in view.members:
+                    self.client.serverMembers.append(i)
             print("** Server View:[" + str(view.coordinator) + "|" + str(view.num) + "] ("
-                  + str(view.size) + ")" + view.members)
-            self.lock.acquire()
-            try:
-                self.client.serverMembers.clear()
-                if view.size > 0:
-                    for i in view.members:
-                        self.client.serverMembers.append(i)
-            finally:
-                self.stubLock.release()
+                  + str(view.size) + ")" + str(self.client.serverMembers))
         elif field == "stateRepPy":
             state_rep = response.stateRepPy
             print(str(state_rep.size) + " messages in the chat history.")

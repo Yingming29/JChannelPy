@@ -233,10 +233,10 @@ message RepMsgForPyClient{
   }
 }
 
-
 message ConnectReqPy{
   bool reconnect = 1;
   string logical_name = 2;
+  bytes address = 3;
 }
 message DisconnectReqPy{
   string logical_name = 1;
