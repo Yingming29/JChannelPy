@@ -199,6 +199,15 @@ class Control_thread(threading.Thread):
                 )
             )
             return req
+        elif input_string == "getState":
+            req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    getStateReqPy=jchannel_pb2.StateReqPy(
+                        logical_name=self.client.logical_name
+                    )
+                )
+            )
+            return req
         elif input_string == "disconnect":
             # disconnect request
             req = jchannel_pb2.Request(
@@ -247,7 +256,7 @@ class Control_thread(threading.Thread):
                 read_thread.setDaemon(True)
                 read_thread.start()
             except:
-                print("= False")
+                # print("= False")
                 self.control_lock.acquire()
                 try:
                     self.client.isWork = False
@@ -321,15 +330,9 @@ class Control_thread(threading.Thread):
                 self.control_lock.release()'''
 
             if self.client.isWork is False:
-
-                #self.client.clientStub.channel.close()
-                # print("self.checked_isWork is False ")
-                #print("break1 in checkLoop")
                 break
             elif self.client.down is False:
-                #print("break2 in checkLoop")
                 break
-                #sys.exit(0)
             else:
                 continue
 
