@@ -41,6 +41,11 @@ class Client:
             # print("input loop: " + threading.currentThread().getName())
             if self.isWork is False:
                 print("The connection does not work. Store the message.")
+                self.lock.acquire()
+                try:
+                    self.msgList.append(input_string)
+                finally:
+                    self.lock.release()
             else:
                 self.lock.acquire()
                 try:
@@ -145,14 +150,14 @@ class ClientStub:
             random_select = 0
             if not size == 1:
                 random_select = random.randint(0, size - 1)
-
+            time.sleep(3)
             address = self.serverList[random_select]
             print("[Reconnection]: Random selected server for reconnection:" + address)
             self.channel = grpc.insecure_channel(address)
             self.grpcStub1 = jchannel_pb2_grpc.JChannelsServiceStub(self.channel)
             self.grpcStub2 = jchannel_pb2_grpc.JChannelsServiceStub(self.channel)
             bool_result = self.try_one_connect()
-            time.sleep(1)
+
             if bool_result is True:
                 self.client.address = address
                 print("[Reconnection]: Reconnect successfully to server-" + self.client.address)
@@ -199,7 +204,7 @@ class Control_thread(threading.Thread):
                 )
             )
             return req
-        elif input_string == "getState":
+        elif input_string == "state":
             req = jchannel_pb2.Request(
                 pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
                     getStateReqPy=jchannel_pb2.StateReqPy(
@@ -218,6 +223,182 @@ class Control_thread(threading.Thread):
                 )
             )
             return req
+        elif input_string == "getStats":
+            # getDiscardOwnMsg request
+            req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    getStatsReqPy=jchannel_pb2.GetStatsReq(
+                        jchannel_address=self.client.logical_name
+                    )
+                )
+            )
+            return req
+        elif input_string == "getProperty":
+            # getDiscardOwnMsg request
+            req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    getPropertyReqPy=jchannel_pb2.GetPropertyReq(
+                        jchannel_address=self.client.logical_name
+                    )
+                )
+            )
+            return req
+        elif input_string == "getCluster":
+            # getDiscardOwnMsg request
+            req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    getClusterNameReqPy=jchannel_pb2.GetClusterNameReq(
+                        jchannel_address=self.client.logical_name
+                    )
+                )
+            )
+            return req
+        elif input_string.startswith("dumpStats"):
+            splited_string = input_string.split(" ")
+            if len(splited_string) == 1:
+                req = jchannel_pb2.Request(
+                    pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                        dumpStatsReqPy=jchannel_pb2.DumpStatsReq(
+                            jchannel_address=self.client.logical_name
+                        )
+                    )
+                )
+                return req
+            elif len(splited_string) == 2:
+                req = jchannel_pb2.Request(
+                    pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                        dumpStatsReqPy=jchannel_pb2.DumpStatsReq(
+                            jchannel_address=self.client.logical_name,
+                            protocol_name=splited_string[1]
+                        )
+                    )
+                )
+                return req
+            elif len(splited_string) > 2:
+                saved_list = splited_string
+
+                req = jchannel_pb2.Request(
+                    pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                        dumpStatsReqPy=jchannel_pb2.DumpStatsReq(
+                            jchannel_address=self.client.logical_name,
+                            protocol_name=saved_list[1]
+                        )
+                    )
+                )
+                # dumpStats UDP bind_addr bind_port bundler_buffer_size
+                del splited_string[0]
+                del splited_string[0]
+                req.pyReqMsg.dumpStatsReqPy.attrs.extend(splited_string)
+                return req
+
+        elif input_string.startswith("setStats"):
+            splited_string = input_string.split(" ", 2)
+            bool_req = False
+            if splited_string[1] == "true":
+                req = jchannel_pb2.Request(
+                    pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                        setStatsReqPy=jchannel_pb2.SetStatsReq(
+                            jchannel_address=self.client.logical_name,
+                            stats=True
+                        )
+                    )
+                )
+                return req
+            else:
+                req = jchannel_pb2.Request(
+                    pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                        setStatsReqPy=jchannel_pb2.SetStatsReq(
+                            jchannel_address=self.client.logical_name,
+                            stats=False
+                        )
+                    )
+                )
+                return req
+        elif input_string.startswith("getState"):
+            req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    stateReqPy=jchannel_pb2.GetStateReq(
+                        jchannel_address=self.client.logical_name
+                    )
+                )
+            )
+            return req
+        elif input_string.startswith("printProtocolSpec"):
+            splited_string = input_string.split(" ", 2)
+            bool_req = False
+            if splited_string[1] == "true":
+                req = jchannel_pb2.Request(
+                    pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                        printProtocolSpecReqPy=jchannel_pb2.PrintProtocolSpecReq(
+                            jchannel_address=self.client.logical_name,
+                            include_props=True
+                        )
+                    )
+                )
+                return req
+            else:
+                req = jchannel_pb2.Request(
+                    pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                        printProtocolSpecReqPy=jchannel_pb2.PrintProtocolSpecReq(
+                            jchannel_address=self.client.logical_name,
+                            include_props=False
+                        )
+                    )
+                )
+                return req
+        elif input_string == "getAddress":
+            # getDiscardOwnMsg request
+            req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    getAddressReqPy=jchannel_pb2.GetAddressReq(
+                        jchannel_address=self.client.logical_name
+                    )
+                )
+            )
+            return req
+        elif input_string == "getName":
+            # getDiscardOwnMsg request
+            req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    getNameReqPy=jchannel_pb2.GetNameReq(
+                        jchannel_address=self.client.logical_name
+                    )
+                )
+            )
+            return req
+        elif input_string == "getDiscardOwnMsg":
+            # getDiscardOwnMsg request
+            req = jchannel_pb2.Request(
+                pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                    getDisCardOwnMsgReqPy=jchannel_pb2.GetDiscardOwnMsgReq(
+                        jchannel_address=self.client.logical_name
+                    )
+                )
+            )
+            return req
+        elif input_string.startswith("setDiscardOwnMsg"):
+            splited_string = input_string.split(" ", 2)
+            bool_req = False
+            if splited_string[1] == "true":
+                req = jchannel_pb2.Request(
+                    pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                        setDiscardOwnMsgReqPy=jchannel_pb2.SetDiscardOwnMsgReq(
+                            jchannal_address=self.client.logical_name,
+                            discard=True
+                        )
+                    )
+                )
+                return req
+            else:
+                req = jchannel_pb2.Request(
+                    pyReqMsg=jchannel_pb2.ReqMsgForPyClient(
+                        setDiscardOwnMsgReqPy=jchannel_pb2.SetDiscardOwnMsgReq(
+                            jchannal_address=self.client.logical_name,
+                            discard=False
+                        )
+                    )
+                )
+                return req
         else:
             # common message request for broadcast
             req = jchannel_pb2.Request(
@@ -256,7 +437,7 @@ class Control_thread(threading.Thread):
                 read_thread.setDaemon(True)
                 read_thread.start()
             except:
-                # print("= False")
+
                 self.control_lock.acquire()
                 try:
                     self.client.isWork = False
@@ -272,6 +453,8 @@ class Control_thread(threading.Thread):
             # 4.3
             self.check_loop()
             # 4.4
+            if not self.client.down:
+                break
             reconnect_result = self.client.clientStub.reconnect()
             # 4.5
             if reconnect_result is False:
@@ -306,6 +489,7 @@ class Control_thread(threading.Thread):
         while 1:
 
             if len(self.client.msgList) > 0 and self.client.isWork is True:
+                print(self.client.msgList)
                 line = self.client.msgList[0]
                 msg_request = self.judge_request(line)
 
@@ -320,8 +504,8 @@ class Control_thread(threading.Thread):
                     self.iter_to_add.__add__(msg_request)
                 finally:
                     self.control_lock.release()
-            '''self.control_lock.acquire()
-            try:
+            self.control_lock.acquire()
+            '''try:
                 print("--------")
                 print(str(self.client.isWork))
                 print(str(self.client.down))
@@ -389,9 +573,43 @@ class Read_response(threading.Thread):
         elif field == "disconRepPy":
             self.lock.acquire()
             try:
-                self.client_stub.client.down = False
+                self.client.down = False
             finally:
                 self.lock.release()
+        elif field == "getDiscardOwnMsgRepPy":
+            if response.getDiscardOwnMsgRepPy.discard:
+                print("Receive the response for getDiscardOwnMsg(): True")
+            else:
+                print("Receive the response for getDiscardOwnMsg(): False")
+        elif field == "setDiscardOwnMsgRepPy":
+            if response.setDiscardOwnMsgRepPy.discard:
+                print("Receive the response for setDiscardOwnMsg(): True")
+            else:
+                print("Receive the response for setDiscardOwnMsg(): False")
+        elif field == "getNameRepPy":
+            print("Receive the response for getName():" + str(response.getNameRepPy.name))
+        elif field == "getStateRepPy":
+            print("Receive the response for getState():" + str(response.getStateRepPy.state))
+        elif field == "getAddressRepPy":
+            print("Receive the response for getName():" + str(response.getAddressRepPy.other))
+        elif field == "getPropertyRepPy":
+            print("Receive the response for getProperty():" + str(response.getPropertyRepPy.properties))
+        elif field == "dumpStatsRepPy":
+            print("Receive the response for dumpStats():" + str(response.dumpStatsRepPy.result))
+        elif field == "getClusterNameRepPy":
+            print("Receive the response for getCluster():" + str(response.getClusterNameRepPy.cluster_name))
+        elif field == "getStatsRepPy":
+            if response.getStatsRepPy.stats:
+                print("Receive the response for getStats(): True")
+            else:
+                print("Receive the response for getStats(): False")
+        elif field == "printProtocolSpecRepPy":
+            print("Receive the response for printProtocolSpec: " + str(response.printProtocolSpecRepPy.protocolStackSpec))
+        elif field == "setStatsRepPy":
+            if response.setStatsRepPy.stats:
+                print("Receive the response for setStats(): True")
+            else:
+                print("Receive the response for setStats(): False")
         elif field == "clientViewPy":
             view = response.clientViewPy
             self.client.clientMembers.clear()

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0ejchannel.proto\x12\x11\x63n.yingming.grpc1\"\x84\x08\n\x07Request\x12\x39\n\rmessageReqRep\x18\x01 \x01(\x0b\x32 .cn.yingming.grpc1.MessageReqRepH\x00\x12\x37\n\x0e\x63onnectRequest\x18\x02 \x01(\x0b\x32\x1d.cn.yingming.grpc1.ConnectReqH\x00\x12=\n\x11\x64isconnectRequest\x18\x03 \x01(\x0b\x32 .cn.yingming.grpc1.DisconnectReqH\x00\x12/\n\x08stateReq\x18\x04 \x01(\x0b\x32\x1b.cn.yingming.grpc1.StateReqH\x00\x12\x39\n\rgetAddressReq\x18\x07 \x01(\x0b\x32 .cn.yingming.grpc1.GetAddressReqH\x00\x12\x33\n\ngetNameReq\x18\x08 \x01(\x0b\x32\x1d.cn.yingming.grpc1.GetNameReqH\x00\x12\x41\n\x11getClusterNameReq\x18\t \x01(\x0b\x32$.cn.yingming.grpc1.GetClusterNameReqH\x00\x12@\n\rprintProtoReq\x18\n \x01(\x0b\x32\'.cn.yingming.grpc1.PrintProtocolSpecReqH\x00\x12;\n\x0egetPropertyReq\x18\x0b \x01(\x0b\x32!.cn.yingming.grpc1.GetPropertyReqH\x00\x12\x35\n\x0bsetStatsReq\x18\x0c \x01(\x0b\x32\x1e.cn.yingming.grpc1.SetStatsReqH\x00\x12\x34\n\ngetStatReq\x18\r \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStatsReqH\x00\x12\x37\n\x0c\x64umpStatsReq\x18\x0e \x01(\x0b\x32\x1f.cn.yingming.grpc1.DumpStatsReqH\x00\x12\x45\n\x13setDiscardOwnMsgReq\x18\x0f \x01(\x0b\x32&.cn.yingming.grpc1.SetDiscardOwnMsgReqH\x00\x12\x45\n\x13getDiscardOwnMsgReq\x18\x10 \x01(\x0b\x32&.cn.yingming.grpc1.GetDiscardOwnMsgReqH\x00\x12\x35\n\x0bgetStateReq\x18\x11 \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStateReqH\x00\x12\x33\n\nisStateReq\x18\x12 \x01(\x0b\x32\x1d.cn.yingming.grpc1.IsStateReqH\x00\x12\x38\n\x08pyReqMsg\x18\x13 \x01(\x0b\x32$.cn.yingming.grpc1.ReqMsgForPyClientH\x00\x42\t\n\x07oneType\"\xed\t\n\x08Response\x12\x39\n\rmessageReqRep\x18\x01 \x01(\x0b\x32 .cn.yingming.grpc1.MessageReqRepH\x00\x12\x38\n\x0f\x63onnectResponse\x18\x02 \x01(\x0b\x32\x1d.cn.yingming.grpc1.ConnectRepH\x00\x12>\n\x12\x64isconnectResponse\x18\x03 \x01(\x0b\x32 .cn.yingming.grpc1.DisconnectRepH\x00\x12\x36\n\x0eupdateResponse\x18\x04 \x01(\x0b\x32\x1c.cn.yingming.grpc1.UpdateRepH\x00\x12\x32\n\x0cviewResponse\x18\x05 \x01(\x0b\x32\x1a.cn.yingming.grpc1.ViewRepH\x00\x12;\n\x0eviewRep_server\x18\x06 \x01(\x0b\x32!.cn.yingming.grpc1.ViewRep_serverH\x00\x12@\n\x0fupdateNameCache\x18\x07 \x01(\x0b\x32%.cn.yingming.grpc1.UpdateNameCacheRepH\x00\x12/\n\x08stateRep\x18\x08 \x01(\x0b\x32\x1b.cn.yingming.grpc1.StateRepH\x00\x12\x39\n\rgetAddressRep\x18\x0b \x01(\x0b\x32 .cn.yingming.grpc1.GetAddressRepH\x00\x12\x33\n\ngetNameRep\x18\x0c \x01(\x0b\x32\x1d.cn.yingming.grpc1.GetNameRepH\x00\x12\x41\n\x11getClusterNameRep\x18\r \x01(\x0b\x32$.cn.yingming.grpc1.GetClusterNameRepH\x00\x12@\n\rprintProtoRep\x18\x0e \x01(\x0b\x32\'.cn.yingming.grpc1.PrintProtocolSpecRepH\x00\x12;\n\x0egetPropertyRep\x18\x0f \x01(\x0b\x32!.cn.yingming.grpc1.GetPropertyRepH\x00\x12\x35\n\x0bsetStatsRep\x18\x10 \x01(\x0b\x32\x1e.cn.yingming.grpc1.SetStatsRepH\x00\x12\x35\n\x0bgetStatsRep\x18\x11 \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStatsRepH\x00\x12\x37\n\x0c\x64umpStatsRep\x18\x12 \x01(\x0b\x32\x1f.cn.yingming.grpc1.DumpStatsRepH\x00\x12\x42\n\x10setDiscardOwnRep\x18\x13 \x01(\x0b\x32&.cn.yingming.grpc1.SetDiscardOwnMsgRepH\x00\x12\x42\n\x10getDiscardOwnRep\x18\x14 \x01(\x0b\x32&.cn.yingming.grpc1.GetDiscardOwnMsgRepH\x00\x12\x35\n\x0bgetStateRep\x18\x15 \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStateRepH\x00\x12\x33\n\nisStateRep\x18\x16 \x01(\x0b\x32\x1d.cn.yingming.grpc1.IsStateRepH\x00\x12\x38\n\x08pyRepMsg\x18\x17 \x01(\x0b\x32$.cn.yingming.grpc1.RepMsgForPyClientH\x00\x42\t\n\x07oneType\"4\n\nIsStateReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\"\x1c\n\nIsStateRep\x12\x0e\n\x06result\x18\x01 \x01(\x08\"\'\n\x0bGetStateReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"\x1c\n\x0bGetStateRep\x12\r\n\x05state\x18\x01 \x01(\t\"@\n\x13SetDiscardOwnMsgReq\x12\x18\n\x10jchannal_address\x18\x01 \x01(\t\x12\x0f\n\x07\x64iscard\x18\x02 \x01(\x08\"&\n\x13SetDiscardOwnMsgRep\x12\x0f\n\x07\x64iscard\x18\x01 \x01(\x08\"/\n\x13GetDiscardOwnMsgReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"&\n\x13GetDiscardOwnMsgRep\x12\x0f\n\x07\x64iscard\x18\x01 \x01(\x08\"N\n\x0c\x44umpStatsReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\x15\n\rprotocol_name\x18\x02 \x01(\t\x12\r\n\x05\x61ttrs\x18\x03 \x03(\t\"$\n\x0c\x44umpStatsRep\x12\x14\n\x0cserializeMap\x18\x01 \x01(\x0c\"\'\n\x0bGetStatsReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"\x1c\n\x0bGetStatsRep\x12\r\n\x05stats\x18\x01 \x01(\x08\"6\n\x0bSetStatsReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\r\n\x05stats\x18\x02 \x01(\x08\"\x1c\n\x0bSetStatsRep\x12\r\n\x05stats\x18\x01 \x01(\x08\"*\n\x0eGetPropertyReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"$\n\x0eGetPropertyRep\x12\x12\n\nproperties\x18\x01 \x01(\t\"\xe4\x01\n\nChannelMsg\x12\x35\n\x0b\x65xchangeMsg\x18\x01 \x01(\x0b\x32\x1e.cn.yingming.grpc1.ExchangeMsgH\x00\x12I\n\x15updateReqBetweenNodes\x18\x02 \x01(\x0b\x32(.cn.yingming.grpc1.UpdateReqBetweenNodesH\x00\x12I\n\x15updateRepBetweenNodes\x18\x03 \x01(\x0b\x32(.cn.yingming.grpc1.UpdateRepBetweenNodesH\x00\x42\t\n\x07oneType\"E\n\x0b\x45xchangeMsg\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x13\n\x0b\x63ontent_str\x18\x02 \x01(\t\x12\x13\n\x0b\x63ontent_byt\x18\x03 \x01(\x0c\"(\n\x15UpdateReqBetweenNodes\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\"\x81\x01\n\x15UpdateRepBetweenNodes\x12\x38\n\tnameCache\x18\x01 \x01(\x0b\x32%.cn.yingming.grpc1.UpdateNameCacheRep\x12.\n\nclientView\x18\x02 \x01(\x0b\x32\x1a.cn.yingming.grpc1.ViewRep\";\n\x12UpdateNameCacheRep\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x03(\x0c\x12\x14\n\x0clogical_name\x18\x02 \x03(\t\"G\n\x14PrintProtocolSpecReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\x15\n\rinclude_props\x18\x02 \x01(\x08\"1\n\x14PrintProtocolSpecRep\x12\x19\n\x11protocolStackSpec\x18\x01 \x01(\t\"-\n\x11GetClusterNameReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\")\n\x11GetClusterNameRep\x12\x14\n\x0c\x63luster_name\x18\x01 \x01(\t\"&\n\nGetNameReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"\x1a\n\nGetNameRep\x12\x0c\n\x04name\x18\x01 \x01(\t\")\n\rGetAddressReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"?\n\rGetAddressRep\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\x12\x0e\n\x06isWork\x18\x02 \x01(\x08\x12\r\n\x05other\x18\x03 \x01(\t\"3\n\x0eViewRep_server\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x11\n\tview_byte\x18\x02 \x01(\x0c\"\x17\n\x07ViewRep\x12\x0c\n\x04view\x18\x01 \x01(\x0c\"\x1e\n\tUpdateRep\x12\x11\n\taddresses\x18\x01 \x01(\t\"1\n\rMessageReqRep\x12\x12\n\nmessageObj\x18\x01 \x01(\x0c\x12\x0c\n\x04type\x18\x02 \x01(\x05\"R\n\nConnectReq\x12\x11\n\treconnect\x18\x01 \x01(\x08\x12\x14\n\x0clogical_name\x18\x02 \x01(\t\x12\x1b\n\x13jchann_address_byte\x18\x03 \x01(\x0c\"C\n\nConnectRep\x12\x0e\n\x06result\x18\x01 \x01(\x08\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\x0c\x12\x14\n\x0clogical_name\x18\x03 \x01(\t\")\n\rDisconnectReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\x0c\"\x1f\n\rDisconnectRep\x12\x0e\n\x06result\x18\x01 \x01(\x08\"\x18\n\x06ReqAsk\x12\x0e\n\x06source\x18\x01 \x01(\t\"\x1a\n\x06RepAsk\x12\x10\n\x08survival\x18\x01 \x01(\x08\"E\n\x08StateReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\x0c\x12\x0e\n\x06target\x18\x02 \x01(\x0c\x12\x0f\n\x07timeout\x18\x03 \x01(\x04\"C\n\x08StateRep\x12\x18\n\x10jchannel_address\x18\x01 \x01(\x0c\x12\r\n\x05state\x18\x02 \x01(\x0c\x12\x0e\n\x06target\x18\x03 \x01(\x0c\"\xfb\x01\n\x11ReqMsgForPyClient\x12\x33\n\x08\x63onReqPy\x18\x01 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ConnectReqPyH\x00\x12\x39\n\x0b\x64isconReqPy\x18\x02 \x01(\x0b\x32\".cn.yingming.grpc1.DisconnectReqPyH\x00\x12\x33\n\x08msgReqPy\x18\x03 \x01(\x0b\x32\x1f.cn.yingming.grpc1.MessageReqPyH\x00\x12\x36\n\rgetStateReqPy\x18\x04 \x01(\x0b\x32\x1d.cn.yingming.grpc1.StateReqPyH\x00\x42\t\n\x07oneType\"\xa1\x03\n\x11RepMsgForPyClient\x12\x33\n\x08\x63onRepPy\x18\x01 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ConnectRepPyH\x00\x12\x39\n\x0b\x64isconRepPy\x18\x02 \x01(\x0b\x32\".cn.yingming.grpc1.DisconnectRepPyH\x00\x12\x33\n\x08msgRepPy\x18\x03 \x01(\x0b\x32\x1f.cn.yingming.grpc1.MessageRepPyH\x00\x12\x33\n\nstateRepPy\x18\x04 \x01(\x0b\x32\x1d.cn.yingming.grpc1.StateRepPyH\x00\x12\x37\n\x0c\x63lientViewPy\x18\x05 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ClientViewPyH\x00\x12\x37\n\x0cserverViewPy\x18\x06 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ServerViewPyH\x00\x12\x35\n\x0bupdateAddPy\x18\x07 \x01(\x0b\x32\x1e.cn.yingming.grpc1.UpdateAddPyH\x00\x42\t\n\x07oneType\"H\n\x0c\x43onnectReqPy\x12\x11\n\treconnect\x18\x01 \x01(\x08\x12\x14\n\x0clogical_name\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0c\"\'\n\x0f\x44isconnectReqPy\x12\x14\n\x0clogical_name\x18\x01 \x01(\t\"@\n\x0cMessageReqPy\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x65st\x18\x02 \x01(\t\x12\x12\n\ncontentStr\x18\x03 \x01(\t\"4\n\x0c\x43onnectRepPy\x12\x0e\n\x06result\x18\x01 \x01(\x08\x12\x14\n\x0clogical_name\x18\x02 \x01(\t\"!\n\x0f\x44isconnectRepPy\x12\x0e\n\x06result\x18\x01 \x01(\x08\"2\n\x0cMessageRepPy\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x12\n\ncontentStr\x18\x03 \x01(\t\"O\n\x0c\x43lientViewPy\x12\x0b\n\x03num\x18\x01 \x01(\x05\x12\x0f\n\x07members\x18\x02 \x03(\t\x12\x13\n\x0b\x63oordinator\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x05\"O\n\x0cServerViewPy\x12\x0b\n\x03num\x18\x01 \x01(\x05\x12\x0f\n\x07members\x18\x02 \x03(\t\x12\x13\n\x0b\x63oordinator\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x05\" \n\x0bUpdateAddPy\x12\x11\n\taddresses\x18\x01 \x01(\t\"\"\n\nStateReqPy\x12\x14\n\x0clogical_name\x18\x01 \x01(\t\"(\n\nStateRepPy\x12\x0c\n\x04size\x18\x01 \x01(\x05\x12\x0c\n\x04line\x18\x02 \x03(\t2\x9b\x01\n\x10JChannelsService\x12H\n\x07\x63onnect\x12\x1a.cn.yingming.grpc1.Request\x1a\x1b.cn.yingming.grpc1.Response\"\x00(\x01\x30\x01\x12=\n\x03\x61sk\x12\x19.cn.yingming.grpc1.ReqAsk\x1a\x19.cn.yingming.grpc1.RepAsk\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x0ejchannel.proto\x12\x11\x63n.yingming.grpc1\"\x84\x08\n\x07Request\x12\x39\n\rmessageReqRep\x18\x01 \x01(\x0b\x32 .cn.yingming.grpc1.MessageReqRepH\x00\x12\x37\n\x0e\x63onnectRequest\x18\x02 \x01(\x0b\x32\x1d.cn.yingming.grpc1.ConnectReqH\x00\x12=\n\x11\x64isconnectRequest\x18\x03 \x01(\x0b\x32 .cn.yingming.grpc1.DisconnectReqH\x00\x12/\n\x08stateReq\x18\x04 \x01(\x0b\x32\x1b.cn.yingming.grpc1.StateReqH\x00\x12\x39\n\rgetAddressReq\x18\x07 \x01(\x0b\x32 .cn.yingming.grpc1.GetAddressReqH\x00\x12\x33\n\ngetNameReq\x18\x08 \x01(\x0b\x32\x1d.cn.yingming.grpc1.GetNameReqH\x00\x12\x41\n\x11getClusterNameReq\x18\t \x01(\x0b\x32$.cn.yingming.grpc1.GetClusterNameReqH\x00\x12@\n\rprintProtoReq\x18\n \x01(\x0b\x32\'.cn.yingming.grpc1.PrintProtocolSpecReqH\x00\x12;\n\x0egetPropertyReq\x18\x0b \x01(\x0b\x32!.cn.yingming.grpc1.GetPropertyReqH\x00\x12\x35\n\x0bsetStatsReq\x18\x0c \x01(\x0b\x32\x1e.cn.yingming.grpc1.SetStatsReqH\x00\x12\x34\n\ngetStatReq\x18\r \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStatsReqH\x00\x12\x37\n\x0c\x64umpStatsReq\x18\x0e \x01(\x0b\x32\x1f.cn.yingming.grpc1.DumpStatsReqH\x00\x12\x45\n\x13setDiscardOwnMsgReq\x18\x0f \x01(\x0b\x32&.cn.yingming.grpc1.SetDiscardOwnMsgReqH\x00\x12\x45\n\x13getDiscardOwnMsgReq\x18\x10 \x01(\x0b\x32&.cn.yingming.grpc1.GetDiscardOwnMsgReqH\x00\x12\x35\n\x0bgetStateReq\x18\x11 \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStateReqH\x00\x12\x33\n\nisStateReq\x18\x12 \x01(\x0b\x32\x1d.cn.yingming.grpc1.IsStateReqH\x00\x12\x38\n\x08pyReqMsg\x18\x13 \x01(\x0b\x32$.cn.yingming.grpc1.ReqMsgForPyClientH\x00\x42\t\n\x07oneType\"\xed\t\n\x08Response\x12\x39\n\rmessageReqRep\x18\x01 \x01(\x0b\x32 .cn.yingming.grpc1.MessageReqRepH\x00\x12\x38\n\x0f\x63onnectResponse\x18\x02 \x01(\x0b\x32\x1d.cn.yingming.grpc1.ConnectRepH\x00\x12>\n\x12\x64isconnectResponse\x18\x03 \x01(\x0b\x32 .cn.yingming.grpc1.DisconnectRepH\x00\x12\x36\n\x0eupdateResponse\x18\x04 \x01(\x0b\x32\x1c.cn.yingming.grpc1.UpdateRepH\x00\x12\x32\n\x0cviewResponse\x18\x05 \x01(\x0b\x32\x1a.cn.yingming.grpc1.ViewRepH\x00\x12;\n\x0eviewRep_server\x18\x06 \x01(\x0b\x32!.cn.yingming.grpc1.ViewRep_serverH\x00\x12@\n\x0fupdateNameCache\x18\x07 \x01(\x0b\x32%.cn.yingming.grpc1.UpdateNameCacheRepH\x00\x12/\n\x08stateRep\x18\x08 \x01(\x0b\x32\x1b.cn.yingming.grpc1.StateRepH\x00\x12\x39\n\rgetAddressRep\x18\x0b \x01(\x0b\x32 .cn.yingming.grpc1.GetAddressRepH\x00\x12\x33\n\ngetNameRep\x18\x0c \x01(\x0b\x32\x1d.cn.yingming.grpc1.GetNameRepH\x00\x12\x41\n\x11getClusterNameRep\x18\r \x01(\x0b\x32$.cn.yingming.grpc1.GetClusterNameRepH\x00\x12@\n\rprintProtoRep\x18\x0e \x01(\x0b\x32\'.cn.yingming.grpc1.PrintProtocolSpecRepH\x00\x12;\n\x0egetPropertyRep\x18\x0f \x01(\x0b\x32!.cn.yingming.grpc1.GetPropertyRepH\x00\x12\x35\n\x0bsetStatsRep\x18\x10 \x01(\x0b\x32\x1e.cn.yingming.grpc1.SetStatsRepH\x00\x12\x35\n\x0bgetStatsRep\x18\x11 \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStatsRepH\x00\x12\x37\n\x0c\x64umpStatsRep\x18\x12 \x01(\x0b\x32\x1f.cn.yingming.grpc1.DumpStatsRepH\x00\x12\x42\n\x10setDiscardOwnRep\x18\x13 \x01(\x0b\x32&.cn.yingming.grpc1.SetDiscardOwnMsgRepH\x00\x12\x42\n\x10getDiscardOwnRep\x18\x14 \x01(\x0b\x32&.cn.yingming.grpc1.GetDiscardOwnMsgRepH\x00\x12\x35\n\x0bgetStateRep\x18\x15 \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStateRepH\x00\x12\x33\n\nisStateRep\x18\x16 \x01(\x0b\x32\x1d.cn.yingming.grpc1.IsStateRepH\x00\x12\x38\n\x08pyRepMsg\x18\x17 \x01(\x0b\x32$.cn.yingming.grpc1.RepMsgForPyClientH\x00\x42\t\n\x07oneType\"4\n\nIsStateReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\"\x1c\n\nIsStateRep\x12\x0e\n\x06result\x18\x01 \x01(\x08\"\'\n\x0bGetStateReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"\x1c\n\x0bGetStateRep\x12\r\n\x05state\x18\x01 \x01(\t\"@\n\x13SetDiscardOwnMsgReq\x12\x18\n\x10jchannal_address\x18\x01 \x01(\t\x12\x0f\n\x07\x64iscard\x18\x02 \x01(\x08\"&\n\x13SetDiscardOwnMsgRep\x12\x0f\n\x07\x64iscard\x18\x01 \x01(\x08\"/\n\x13GetDiscardOwnMsgReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"&\n\x13GetDiscardOwnMsgRep\x12\x0f\n\x07\x64iscard\x18\x01 \x01(\x08\"N\n\x0c\x44umpStatsReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\x15\n\rprotocol_name\x18\x02 \x01(\t\x12\r\n\x05\x61ttrs\x18\x03 \x03(\t\"$\n\x0c\x44umpStatsRep\x12\x14\n\x0cserializeMap\x18\x01 \x01(\x0c\"\'\n\x0bGetStatsReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"\x1c\n\x0bGetStatsRep\x12\r\n\x05stats\x18\x01 \x01(\x08\"6\n\x0bSetStatsReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\r\n\x05stats\x18\x02 \x01(\x08\"\x1c\n\x0bSetStatsRep\x12\r\n\x05stats\x18\x01 \x01(\x08\"*\n\x0eGetPropertyReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"$\n\x0eGetPropertyRep\x12\x12\n\nproperties\x18\x01 \x01(\t\"\xe4\x01\n\nChannelMsg\x12\x35\n\x0b\x65xchangeMsg\x18\x01 \x01(\x0b\x32\x1e.cn.yingming.grpc1.ExchangeMsgH\x00\x12I\n\x15updateReqBetweenNodes\x18\x02 \x01(\x0b\x32(.cn.yingming.grpc1.UpdateReqBetweenNodesH\x00\x12I\n\x15updateRepBetweenNodes\x18\x03 \x01(\x0b\x32(.cn.yingming.grpc1.UpdateRepBetweenNodesH\x00\x42\t\n\x07oneType\"E\n\x0b\x45xchangeMsg\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x13\n\x0b\x63ontent_str\x18\x02 \x01(\t\x12\x13\n\x0b\x63ontent_byt\x18\x03 \x01(\x0c\"(\n\x15UpdateReqBetweenNodes\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\"\x81\x01\n\x15UpdateRepBetweenNodes\x12\x38\n\tnameCache\x18\x01 \x01(\x0b\x32%.cn.yingming.grpc1.UpdateNameCacheRep\x12.\n\nclientView\x18\x02 \x01(\x0b\x32\x1a.cn.yingming.grpc1.ViewRep\";\n\x12UpdateNameCacheRep\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x03(\x0c\x12\x14\n\x0clogical_name\x18\x02 \x03(\t\"G\n\x14PrintProtocolSpecReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\x12\x15\n\rinclude_props\x18\x02 \x01(\x08\"1\n\x14PrintProtocolSpecRep\x12\x19\n\x11protocolStackSpec\x18\x01 \x01(\t\"-\n\x11GetClusterNameReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\")\n\x11GetClusterNameRep\x12\x14\n\x0c\x63luster_name\x18\x01 \x01(\t\"&\n\nGetNameReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"\x1a\n\nGetNameRep\x12\x0c\n\x04name\x18\x01 \x01(\t\")\n\rGetAddressReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\t\"?\n\rGetAddressRep\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\x12\x0e\n\x06isWork\x18\x02 \x01(\x08\x12\r\n\x05other\x18\x03 \x01(\t\"3\n\x0eViewRep_server\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x11\n\tview_byte\x18\x02 \x01(\x0c\"\x17\n\x07ViewRep\x12\x0c\n\x04view\x18\x01 \x01(\x0c\"\x1e\n\tUpdateRep\x12\x11\n\taddresses\x18\x01 \x01(\t\"1\n\rMessageReqRep\x12\x12\n\nmessageObj\x18\x01 \x01(\x0c\x12\x0c\n\x04type\x18\x02 \x01(\x05\"R\n\nConnectReq\x12\x11\n\treconnect\x18\x01 \x01(\x08\x12\x14\n\x0clogical_name\x18\x02 \x01(\t\x12\x1b\n\x13jchann_address_byte\x18\x03 \x01(\x0c\"C\n\nConnectRep\x12\x0e\n\x06result\x18\x01 \x01(\x08\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\x0c\x12\x14\n\x0clogical_name\x18\x03 \x01(\t\"6\n\rDisconnectReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\x0c\x12\x0b\n\x03str\x18\x02 \x01(\t\"\x1f\n\rDisconnectRep\x12\x0e\n\x06result\x18\x01 \x01(\x08\"\x18\n\x06ReqAsk\x12\x0e\n\x06source\x18\x01 \x01(\t\"\x1a\n\x06RepAsk\x12\x10\n\x08survival\x18\x01 \x01(\x08\"E\n\x08StateReq\x12\x18\n\x10jchannel_address\x18\x01 \x01(\x0c\x12\x0e\n\x06target\x18\x02 \x01(\x0c\x12\x0f\n\x07timeout\x18\x03 \x01(\x04\"C\n\x08StateRep\x12\x18\n\x10jchannel_address\x18\x01 \x01(\x0c\x12\r\n\x05state\x18\x02 \x01(\x0c\x12\x0e\n\x06target\x18\x03 \x01(\x0c\"\xb3\x07\n\x11ReqMsgForPyClient\x12\x33\n\x08\x63onReqPy\x18\x01 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ConnectReqPyH\x00\x12\x39\n\x0b\x64isconReqPy\x18\x02 \x01(\x0b\x32\".cn.yingming.grpc1.DisconnectReqPyH\x00\x12\x33\n\x08msgReqPy\x18\x03 \x01(\x0b\x32\x1f.cn.yingming.grpc1.MessageReqPyH\x00\x12\x36\n\rgetStateReqPy\x18\x04 \x01(\x0b\x32\x1d.cn.yingming.grpc1.StateReqPyH\x00\x12G\n\x15getDisCardOwnMsgReqPy\x18\x05 \x01(\x0b\x32&.cn.yingming.grpc1.GetDiscardOwnMsgReqH\x00\x12G\n\x15setDiscardOwnMsgReqPy\x18\x06 \x01(\x0b\x32&.cn.yingming.grpc1.SetDiscardOwnMsgReqH\x00\x12\x37\n\rgetStatsReqPy\x18\x07 \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStatsReqH\x00\x12\x37\n\rsetStatsReqPy\x18\x08 \x01(\x0b\x32\x1e.cn.yingming.grpc1.SetStatsReqH\x00\x12\x35\n\x0cgetNameReqPy\x18\t \x01(\x0b\x32\x1d.cn.yingming.grpc1.GetNameReqH\x00\x12;\n\x0fgetAddressReqPy\x18\n \x01(\x0b\x32 .cn.yingming.grpc1.GetAddressReqH\x00\x12I\n\x16printProtocolSpecReqPy\x18\x0b \x01(\x0b\x32\'.cn.yingming.grpc1.PrintProtocolSpecReqH\x00\x12\x34\n\nstateReqPy\x18\x0c \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStateReqH\x00\x12=\n\x10getPropertyReqPy\x18\r \x01(\x0b\x32!.cn.yingming.grpc1.GetPropertyReqH\x00\x12\x39\n\x0e\x64umpStatsReqPy\x18\x0e \x01(\x0b\x32\x1f.cn.yingming.grpc1.DumpStatsReqH\x00\x12\x43\n\x13getClusterNameReqPy\x18\x0f \x01(\x0b\x32$.cn.yingming.grpc1.GetClusterNameReqH\x00\x42\t\n\x07oneType\"\xde\x08\n\x11RepMsgForPyClient\x12\x33\n\x08\x63onRepPy\x18\x01 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ConnectRepPyH\x00\x12\x39\n\x0b\x64isconRepPy\x18\x02 \x01(\x0b\x32\".cn.yingming.grpc1.DisconnectRepPyH\x00\x12\x33\n\x08msgRepPy\x18\x03 \x01(\x0b\x32\x1f.cn.yingming.grpc1.MessageRepPyH\x00\x12\x33\n\nstateRepPy\x18\x04 \x01(\x0b\x32\x1d.cn.yingming.grpc1.StateRepPyH\x00\x12\x37\n\x0c\x63lientViewPy\x18\x05 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ClientViewPyH\x00\x12\x37\n\x0cserverViewPy\x18\x06 \x01(\x0b\x32\x1f.cn.yingming.grpc1.ServerViewPyH\x00\x12\x35\n\x0bupdateAddPy\x18\x07 \x01(\x0b\x32\x1e.cn.yingming.grpc1.UpdateAddPyH\x00\x12G\n\x15getDiscardOwnMsgRepPy\x18\x08 \x01(\x0b\x32&.cn.yingming.grpc1.GetDiscardOwnMsgRepH\x00\x12G\n\x15setDiscardOwnMsgRepPy\x18\t \x01(\x0b\x32&.cn.yingming.grpc1.SetDiscardOwnMsgRepH\x00\x12\x37\n\rgetStatsRepPy\x18\n \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStatsRepH\x00\x12\x37\n\rsetStatsRepPy\x18\x0b \x01(\x0b\x32\x1e.cn.yingming.grpc1.SetStatsRepH\x00\x12\x35\n\x0cgetNameRepPy\x18\x0c \x01(\x0b\x32\x1d.cn.yingming.grpc1.GetNameRepH\x00\x12;\n\x0fgetAddressRepPy\x18\r \x01(\x0b\x32 .cn.yingming.grpc1.GetAddressRepH\x00\x12I\n\x16printProtocolSpecRepPy\x18\x0e \x01(\x0b\x32\'.cn.yingming.grpc1.PrintProtocolSpecRepH\x00\x12\x37\n\rgetStateRepPy\x18\x0f \x01(\x0b\x32\x1e.cn.yingming.grpc1.GetStateRepH\x00\x12=\n\x10getPropertyRepPy\x18\x10 \x01(\x0b\x32!.cn.yingming.grpc1.GetPropertyRepH\x00\x12;\n\x0e\x64umpStatsRepPy\x18\x11 \x01(\x0b\x32!.cn.yingming.grpc1.DumpStatsRepPyH\x00\x12\x43\n\x13getClusterNameRepPy\x18\x12 \x01(\x0b\x32$.cn.yingming.grpc1.GetClusterNameRepH\x00\x42\t\n\x07oneType\"H\n\x0c\x43onnectReqPy\x12\x11\n\treconnect\x18\x01 \x01(\x08\x12\x14\n\x0clogical_name\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0c\"\'\n\x0f\x44isconnectReqPy\x12\x14\n\x0clogical_name\x18\x01 \x01(\t\"@\n\x0cMessageReqPy\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x65st\x18\x02 \x01(\t\x12\x12\n\ncontentStr\x18\x03 \x01(\t\" \n\x0e\x44umpStatsRepPy\x12\x0e\n\x06result\x18\x01 \x01(\t\"4\n\x0c\x43onnectRepPy\x12\x0e\n\x06result\x18\x01 \x01(\x08\x12\x14\n\x0clogical_name\x18\x02 \x01(\t\"!\n\x0f\x44isconnectRepPy\x12\x0e\n\x06result\x18\x01 \x01(\x08\"2\n\x0cMessageRepPy\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x12\n\ncontentStr\x18\x03 \x01(\t\"O\n\x0c\x43lientViewPy\x12\x0b\n\x03num\x18\x01 \x01(\x05\x12\x0f\n\x07members\x18\x02 \x03(\t\x12\x13\n\x0b\x63oordinator\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x05\"O\n\x0cServerViewPy\x12\x0b\n\x03num\x18\x01 \x01(\x05\x12\x0f\n\x07members\x18\x02 \x03(\t\x12\x13\n\x0b\x63oordinator\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x05\" \n\x0bUpdateAddPy\x12\x11\n\taddresses\x18\x01 \x01(\t\"\"\n\nStateReqPy\x12\x14\n\x0clogical_name\x18\x01 \x01(\t\"(\n\nStateRepPy\x12\x0c\n\x04size\x18\x01 \x01(\x05\x12\x0c\n\x04line\x18\x02 \x03(\t2\x9b\x01\n\x10JChannelsService\x12H\n\x07\x63onnect\x12\x1a.cn.yingming.grpc1.Request\x1a\x1b.cn.yingming.grpc1.Response\"\x00(\x01\x30\x01\x12=\n\x03\x61sk\x12\x19.cn.yingming.grpc1.ReqAsk\x1a\x19.cn.yingming.grpc1.RepAsk\"\x00\x62\x06proto3'
 )
 
 
@@ -1631,6 +1631,13 @@ _DISCONNECTREQ = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='str', full_name='cn.yingming.grpc1.DisconnectReq.str', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1644,7 +1651,7 @@ _DISCONNECTREQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=4280,
-  serialized_end=4321,
+  serialized_end=4334,
 )
 
 
@@ -1675,8 +1682,8 @@ _DISCONNECTREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4323,
-  serialized_end=4354,
+  serialized_start=4336,
+  serialized_end=4367,
 )
 
 
@@ -1707,8 +1714,8 @@ _REQASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4356,
-  serialized_end=4380,
+  serialized_start=4369,
+  serialized_end=4393,
 )
 
 
@@ -1739,8 +1746,8 @@ _REPASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4382,
-  serialized_end=4408,
+  serialized_start=4395,
+  serialized_end=4421,
 )
 
 
@@ -1785,8 +1792,8 @@ _STATEREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4410,
-  serialized_end=4479,
+  serialized_start=4423,
+  serialized_end=4492,
 )
 
 
@@ -1831,8 +1838,8 @@ _STATEREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4481,
-  serialized_end=4548,
+  serialized_start=4494,
+  serialized_end=4561,
 )
 
 
@@ -1872,6 +1879,83 @@ _REQMSGFORPYCLIENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getDisCardOwnMsgReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.getDisCardOwnMsgReqPy', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='setDiscardOwnMsgReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.setDiscardOwnMsgReqPy', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getStatsReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.getStatsReqPy', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='setStatsReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.setStatsReqPy', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getNameReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.getNameReqPy', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getAddressReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.getAddressReqPy', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='printProtocolSpecReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.printProtocolSpecReqPy', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stateReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.stateReqPy', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getPropertyReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.getPropertyReqPy', index=12,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dumpStatsReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.dumpStatsReqPy', index=13,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getClusterNameReqPy', full_name='cn.yingming.grpc1.ReqMsgForPyClient.getClusterNameReqPy', index=14,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1889,8 +1973,8 @@ _REQMSGFORPYCLIENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=4551,
-  serialized_end=4802,
+  serialized_start=4564,
+  serialized_end=5511,
 )
 
 
@@ -1951,6 +2035,83 @@ _REPMSGFORPYCLIENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getDiscardOwnMsgRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.getDiscardOwnMsgRepPy', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='setDiscardOwnMsgRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.setDiscardOwnMsgRepPy', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getStatsRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.getStatsRepPy', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='setStatsRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.setStatsRepPy', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getNameRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.getNameRepPy', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getAddressRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.getAddressRepPy', index=12,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='printProtocolSpecRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.printProtocolSpecRepPy', index=13,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getStateRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.getStateRepPy', index=14,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getPropertyRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.getPropertyRepPy', index=15,
+      number=16, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dumpStatsRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.dumpStatsRepPy', index=16,
+      number=17, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='getClusterNameRepPy', full_name='cn.yingming.grpc1.RepMsgForPyClient.getClusterNameRepPy', index=17,
+      number=18, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1968,8 +2129,8 @@ _REPMSGFORPYCLIENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=4805,
-  serialized_end=5222,
+  serialized_start=5514,
+  serialized_end=6632,
 )
 
 
@@ -2014,8 +2175,8 @@ _CONNECTREQPY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5224,
-  serialized_end=5296,
+  serialized_start=6634,
+  serialized_end=6706,
 )
 
 
@@ -2046,8 +2207,8 @@ _DISCONNECTREQPY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5298,
-  serialized_end=5337,
+  serialized_start=6708,
+  serialized_end=6747,
 )
 
 
@@ -2092,8 +2253,40 @@ _MESSAGEREQPY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5339,
-  serialized_end=5403,
+  serialized_start=6749,
+  serialized_end=6813,
+)
+
+
+_DUMPSTATSREPPY = _descriptor.Descriptor(
+  name='DumpStatsRepPy',
+  full_name='cn.yingming.grpc1.DumpStatsRepPy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='result', full_name='cn.yingming.grpc1.DumpStatsRepPy.result', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6815,
+  serialized_end=6847,
 )
 
 
@@ -2131,8 +2324,8 @@ _CONNECTREPPY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5405,
-  serialized_end=5457,
+  serialized_start=6849,
+  serialized_end=6901,
 )
 
 
@@ -2163,8 +2356,8 @@ _DISCONNECTREPPY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5459,
-  serialized_end=5492,
+  serialized_start=6903,
+  serialized_end=6936,
 )
 
 
@@ -2202,8 +2395,8 @@ _MESSAGEREPPY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5494,
-  serialized_end=5544,
+  serialized_start=6938,
+  serialized_end=6988,
 )
 
 
@@ -2255,8 +2448,8 @@ _CLIENTVIEWPY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5546,
-  serialized_end=5625,
+  serialized_start=6990,
+  serialized_end=7069,
 )
 
 
@@ -2308,8 +2501,8 @@ _SERVERVIEWPY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5627,
-  serialized_end=5706,
+  serialized_start=7071,
+  serialized_end=7150,
 )
 
 
@@ -2340,8 +2533,8 @@ _UPDATEADDPY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5708,
-  serialized_end=5740,
+  serialized_start=7152,
+  serialized_end=7184,
 )
 
 
@@ -2372,8 +2565,8 @@ _STATEREQPY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5742,
-  serialized_end=5776,
+  serialized_start=7186,
+  serialized_end=7220,
 )
 
 
@@ -2411,8 +2604,8 @@ _STATEREPPY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5778,
-  serialized_end=5818,
+  serialized_start=7222,
+  serialized_end=7262,
 )
 
 _REQUEST.fields_by_name['messageReqRep'].message_type = _MESSAGEREQREP
@@ -2585,6 +2778,17 @@ _REQMSGFORPYCLIENT.fields_by_name['conReqPy'].message_type = _CONNECTREQPY
 _REQMSGFORPYCLIENT.fields_by_name['disconReqPy'].message_type = _DISCONNECTREQPY
 _REQMSGFORPYCLIENT.fields_by_name['msgReqPy'].message_type = _MESSAGEREQPY
 _REQMSGFORPYCLIENT.fields_by_name['getStateReqPy'].message_type = _STATEREQPY
+_REQMSGFORPYCLIENT.fields_by_name['getDisCardOwnMsgReqPy'].message_type = _GETDISCARDOWNMSGREQ
+_REQMSGFORPYCLIENT.fields_by_name['setDiscardOwnMsgReqPy'].message_type = _SETDISCARDOWNMSGREQ
+_REQMSGFORPYCLIENT.fields_by_name['getStatsReqPy'].message_type = _GETSTATSREQ
+_REQMSGFORPYCLIENT.fields_by_name['setStatsReqPy'].message_type = _SETSTATSREQ
+_REQMSGFORPYCLIENT.fields_by_name['getNameReqPy'].message_type = _GETNAMEREQ
+_REQMSGFORPYCLIENT.fields_by_name['getAddressReqPy'].message_type = _GETADDRESSREQ
+_REQMSGFORPYCLIENT.fields_by_name['printProtocolSpecReqPy'].message_type = _PRINTPROTOCOLSPECREQ
+_REQMSGFORPYCLIENT.fields_by_name['stateReqPy'].message_type = _GETSTATEREQ
+_REQMSGFORPYCLIENT.fields_by_name['getPropertyReqPy'].message_type = _GETPROPERTYREQ
+_REQMSGFORPYCLIENT.fields_by_name['dumpStatsReqPy'].message_type = _DUMPSTATSREQ
+_REQMSGFORPYCLIENT.fields_by_name['getClusterNameReqPy'].message_type = _GETCLUSTERNAMEREQ
 _REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
   _REQMSGFORPYCLIENT.fields_by_name['conReqPy'])
 _REQMSGFORPYCLIENT.fields_by_name['conReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
@@ -2597,6 +2801,39 @@ _REQMSGFORPYCLIENT.fields_by_name['msgReqPy'].containing_oneof = _REQMSGFORPYCLI
 _REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
   _REQMSGFORPYCLIENT.fields_by_name['getStateReqPy'])
 _REQMSGFORPYCLIENT.fields_by_name['getStateReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['getDisCardOwnMsgReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['getDisCardOwnMsgReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['setDiscardOwnMsgReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['setDiscardOwnMsgReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['getStatsReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['getStatsReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['setStatsReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['setStatsReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['getNameReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['getNameReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['getAddressReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['getAddressReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['printProtocolSpecReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['printProtocolSpecReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['stateReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['stateReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['getPropertyReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['getPropertyReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['dumpStatsReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['dumpStatsReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REQMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REQMSGFORPYCLIENT.fields_by_name['getClusterNameReqPy'])
+_REQMSGFORPYCLIENT.fields_by_name['getClusterNameReqPy'].containing_oneof = _REQMSGFORPYCLIENT.oneofs_by_name['oneType']
 _REPMSGFORPYCLIENT.fields_by_name['conRepPy'].message_type = _CONNECTREPPY
 _REPMSGFORPYCLIENT.fields_by_name['disconRepPy'].message_type = _DISCONNECTREPPY
 _REPMSGFORPYCLIENT.fields_by_name['msgRepPy'].message_type = _MESSAGEREPPY
@@ -2604,6 +2841,17 @@ _REPMSGFORPYCLIENT.fields_by_name['stateRepPy'].message_type = _STATEREPPY
 _REPMSGFORPYCLIENT.fields_by_name['clientViewPy'].message_type = _CLIENTVIEWPY
 _REPMSGFORPYCLIENT.fields_by_name['serverViewPy'].message_type = _SERVERVIEWPY
 _REPMSGFORPYCLIENT.fields_by_name['updateAddPy'].message_type = _UPDATEADDPY
+_REPMSGFORPYCLIENT.fields_by_name['getDiscardOwnMsgRepPy'].message_type = _GETDISCARDOWNMSGREP
+_REPMSGFORPYCLIENT.fields_by_name['setDiscardOwnMsgRepPy'].message_type = _SETDISCARDOWNMSGREP
+_REPMSGFORPYCLIENT.fields_by_name['getStatsRepPy'].message_type = _GETSTATSREP
+_REPMSGFORPYCLIENT.fields_by_name['setStatsRepPy'].message_type = _SETSTATSREP
+_REPMSGFORPYCLIENT.fields_by_name['getNameRepPy'].message_type = _GETNAMEREP
+_REPMSGFORPYCLIENT.fields_by_name['getAddressRepPy'].message_type = _GETADDRESSREP
+_REPMSGFORPYCLIENT.fields_by_name['printProtocolSpecRepPy'].message_type = _PRINTPROTOCOLSPECREP
+_REPMSGFORPYCLIENT.fields_by_name['getStateRepPy'].message_type = _GETSTATEREP
+_REPMSGFORPYCLIENT.fields_by_name['getPropertyRepPy'].message_type = _GETPROPERTYREP
+_REPMSGFORPYCLIENT.fields_by_name['dumpStatsRepPy'].message_type = _DUMPSTATSREPPY
+_REPMSGFORPYCLIENT.fields_by_name['getClusterNameRepPy'].message_type = _GETCLUSTERNAMEREP
 _REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
   _REPMSGFORPYCLIENT.fields_by_name['conRepPy'])
 _REPMSGFORPYCLIENT.fields_by_name['conRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
@@ -2625,6 +2873,39 @@ _REPMSGFORPYCLIENT.fields_by_name['serverViewPy'].containing_oneof = _REPMSGFORP
 _REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
   _REPMSGFORPYCLIENT.fields_by_name['updateAddPy'])
 _REPMSGFORPYCLIENT.fields_by_name['updateAddPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['getDiscardOwnMsgRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['getDiscardOwnMsgRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['setDiscardOwnMsgRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['setDiscardOwnMsgRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['getStatsRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['getStatsRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['setStatsRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['setStatsRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['getNameRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['getNameRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['getAddressRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['getAddressRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['printProtocolSpecRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['printProtocolSpecRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['getStateRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['getStateRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['getPropertyRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['getPropertyRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['dumpStatsRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['dumpStatsRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
+_REPMSGFORPYCLIENT.oneofs_by_name['oneType'].fields.append(
+  _REPMSGFORPYCLIENT.fields_by_name['getClusterNameRepPy'])
+_REPMSGFORPYCLIENT.fields_by_name['getClusterNameRepPy'].containing_oneof = _REPMSGFORPYCLIENT.oneofs_by_name['oneType']
 DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
 DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
 DESCRIPTOR.message_types_by_name['IsStateReq'] = _ISSTATEREQ
@@ -2673,6 +2954,7 @@ DESCRIPTOR.message_types_by_name['RepMsgForPyClient'] = _REPMSGFORPYCLIENT
 DESCRIPTOR.message_types_by_name['ConnectReqPy'] = _CONNECTREQPY
 DESCRIPTOR.message_types_by_name['DisconnectReqPy'] = _DISCONNECTREQPY
 DESCRIPTOR.message_types_by_name['MessageReqPy'] = _MESSAGEREQPY
+DESCRIPTOR.message_types_by_name['DumpStatsRepPy'] = _DUMPSTATSREPPY
 DESCRIPTOR.message_types_by_name['ConnectRepPy'] = _CONNECTREPPY
 DESCRIPTOR.message_types_by_name['DisconnectRepPy'] = _DISCONNECTREPPY
 DESCRIPTOR.message_types_by_name['MessageRepPy'] = _MESSAGEREPPY
@@ -3019,6 +3301,13 @@ MessageReqPy = _reflection.GeneratedProtocolMessageType('MessageReqPy', (_messag
   })
 _sym_db.RegisterMessage(MessageReqPy)
 
+DumpStatsRepPy = _reflection.GeneratedProtocolMessageType('DumpStatsRepPy', (_message.Message,), {
+  'DESCRIPTOR' : _DUMPSTATSREPPY,
+  '__module__' : 'jchannel_pb2'
+  # @@protoc_insertion_point(class_scope:cn.yingming.grpc1.DumpStatsRepPy)
+  })
+_sym_db.RegisterMessage(DumpStatsRepPy)
+
 ConnectRepPy = _reflection.GeneratedProtocolMessageType('ConnectRepPy', (_message.Message,), {
   'DESCRIPTOR' : _CONNECTREPPY,
   '__module__' : 'jchannel_pb2'
@@ -3084,8 +3373,8 @@ _JCHANNELSSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=5821,
-  serialized_end=5976,
+  serialized_start=7265,
+  serialized_end=7420,
   methods=[
   _descriptor.MethodDescriptor(
     name='connect',

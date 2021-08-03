@@ -188,6 +188,7 @@ message ConnectRep {
 
 message DisconnectReq{
   bytes jchannel_address = 1;
+  string str = 2;
 }
 message DisconnectRep{
   bool result = 1;
@@ -219,6 +220,17 @@ message ReqMsgForPyClient{
     DisconnectReqPy disconReqPy = 2;
     MessageReqPy msgReqPy = 3;
     StateReqPy getStateReqPy = 4;
+    GetDiscardOwnMsgReq getDisCardOwnMsgReqPy = 5;
+    SetDiscardOwnMsgReq setDiscardOwnMsgReqPy = 6;
+    GetStatsReq getStatsReqPy = 7;
+    SetStatsReq setStatsReqPy = 8;
+    GetNameReq getNameReqPy = 9;
+    GetAddressReq getAddressReqPy = 10;
+    PrintProtocolSpecReq printProtocolSpecReqPy = 11;
+    GetStateReq stateReqPy = 12;
+    GetPropertyReq getPropertyReqPy = 13;
+    DumpStatsReq dumpStatsReqPy = 14;
+    GetClusterNameReq getClusterNameReqPy = 15;
   }
 }
 
@@ -231,6 +243,17 @@ message RepMsgForPyClient{
     ClientViewPy clientViewPy = 5;
     ServerViewPy serverViewPy = 6;
     UpdateAddPy updateAddPy = 7;
+    GetDiscardOwnMsgRep getDiscardOwnMsgRepPy = 8;
+    SetDiscardOwnMsgRep setDiscardOwnMsgRepPy = 9;
+    GetStatsRep getStatsRepPy = 10;
+    SetStatsRep setStatsRepPy = 11;
+    GetNameRep getNameRepPy = 12;
+    GetAddressRep getAddressRepPy = 13;
+    PrintProtocolSpecRep printProtocolSpecRepPy = 14;
+    GetStateRep getStateRepPy = 15;
+    GetPropertyRep getPropertyRepPy = 16;
+    DumpStatsRepPy dumpStatsRepPy = 17;
+    GetClusterNameRep getClusterNameRepPy = 18;
   }
 }
 message ConnectReqPy{
@@ -245,6 +268,9 @@ message MessageReqPy{
   string source = 1;
   string dest = 2;
   string contentStr = 3;
+}
+message DumpStatsRepPy{
+  string result = 1;
 }
 message ConnectRepPy{
   bool result = 1;
@@ -279,5 +305,6 @@ message StateRepPy{
   int32 size = 1;
   repeated string line = 2;
 }
+
 
 
