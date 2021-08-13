@@ -1,0 +1,29 @@
+python3 client.py 127.0.0.1:50053
+
+getName
+getAddress
+getCluster
+getProperty
+
+setDiscardOwnMsg true
+setDiscardOwnMsg false
+getDiscardOwnMsg
+
+printProtocolSpec true 
+printProtocolSpec false
+getState
+
+setStats true false
+setStats false
+getStats
+dumpStats
+dumpStats UDP
+dumpStats UDP bind_addr bind_port bundler_buffer_size
+
+state
+
+
+To logical_name content
+unicast content client 1
+
+disconnect
